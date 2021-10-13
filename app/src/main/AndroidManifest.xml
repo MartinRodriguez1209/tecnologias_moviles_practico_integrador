@@ -48,12 +48,8 @@
         <activity
             android:name=".inicio.InicioMenuActivity"
             android:exported="true" />
-        <activity
-            android:name=".login.LoginCambiarContraseniaActivity"
-            android:exported="true" />
-        <activity
-            android:name=".login.LoginRegistrarseActivity"
-            android:exported="true" />
+
+
         <activity
             android:name=".login.LoginActivity"
             android:exported="true" />
