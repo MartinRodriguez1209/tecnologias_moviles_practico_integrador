@@ -1,0 +1,69 @@
+TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
+TODO GITHUBB
+TODO glide lista de imagenes
+
+1. La aplicación deberá mostrar una pantalla inicial, splash.
+
+2. La aplicación debe permitir el login y registro de usuario en forma local. (Base de
+Datos, Shared Preferences)
+
+3. Deberá permitir cambiar contraseña en caso de olvido. (Base de datos, shared
+preferences).
+
+4. La aplicación permite cambiar / editar la información del usuario. (Base de datos,
+shared preferences).
+
+5. La aplicación deberá permitir abrir la cámara para escanear un código QR e
+interpretar el contenido. (Libreria externa).
+
+6. A partir del código recibido por el escaneo de QR, deberá conectarse a un servidor
+para realizar una petición enviando la información del código. (Networking)
+
+7. La aplicación deberá procesar la información y mostrarla al usuario (Hilos / Tareas
+asíncronas).
+
+8. La aplicación deberá mostrar una forma de navegación de los temas que serán
+descargados de un servidor. (Recycler View).
+
+9. La aplicación permite enviar un correo electrónico al desarrollador con una consulta,
+propuesta de mejora, etc. (Intents). TODO creo que esta revisar el subject que no funciona
+
+10. La estructura de cada QR escaneado que deberá mostrar será la siguiente: (JSON)
+(Dicha estructura puede ser modificada según requerimientos del cliente.)
+
+a. Identificador
+b. Título
+c. Introducción
+d. Contenido principal
+e. Foto principal *
+f. Galería de imágenes *
+g. Video asociado (link de youtube) *
+h. Tags
+i. Links externos
+j. Latitud y Longitud.
+(* -> Significa que el campo puede ser opcional.)
+
+11. La aplicación deberá permitir visualizar las fotos de la galería de imágenes. (View
+Pager, Recycler View, Glide o Picasso (Librería externa). (Extra) TODO funciona, tratar de pasar varias imagenes
+
+12. La aplicación muestra un mensaje de error cuando no puede actualizar la
+información, y otro si no puede conectarse a internet. (Dialogs)
+
+13. La aplicación deberá tener una pantalla de Settings (Configuraciones), donde el
+usuario puede elegir sus preferencias de usuario. (Shared Preferences). TODO creo que esta
+
+14. La aplicación deberá contener un menú de navegación que permita acceder a las
+distintas opciones (Inicio, Favoritos, Configuración, Editar Perfil, Cerrar Sesión)
+(Menú)  TODO casi completo Inicio?
+
+15. La aplicación deberá permitir almacenar en Favoritos los items que el usuario
+seleccione. (Fragment - Persistencia).
+
+16. Requerimiento Extra: Notificaciones: La aplicación deberá permitir enviar una
+notificación diaria a la misma hora para invitar a leer (Notifications).
+
+17. El permiso de cámara al momento de escanear un QR se solicitará en tiempo de
+ejecución. (Permissions).
+
+18. Requerimientos Extra: Se podrá ubicar en un mapa de google maps los lugares
+donde se encuentran los QR.

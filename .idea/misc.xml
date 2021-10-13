@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/drawable/fondo.xml" value="0.24351851851851852" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_configuraciones.xml" value="0.16" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_contrasenia.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_informacion.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_mail.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_nombre.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_nombre_usuario.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_inicio_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login_cambiar_contrasenia.xml" value="0.33" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login_registrarse.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_navigation_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_qr.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_qr2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_splash.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_splash2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_splash_screen.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_favoritos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_navgation_view.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_prueba.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_visor_qr.xml" value="0.2" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/content_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/editar_usuario_fragment.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/fragment_editar_contrasenia.xml" value="0.28229166666666666" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/fragment_editar_informacion.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/fragment_editar_mail.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/fragment_editar_nombre.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/fragment_editar_nombre_usuario.xml" value="0.16621376811594202" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/item_view_tema.xml" value="0.2" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/splash.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/splash_screen.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/test.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/view_qr.xml" value="1.9473684210526316" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/login/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/login/drawable/ic_heart_svgrepo_com.xml" value="0.3828125" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/login/drawable/youtube_button_background.xml" value="0.31875" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/login/mipmap-anydpi-v26/youtube_button.xml" value="0.178125" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/menu/main_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

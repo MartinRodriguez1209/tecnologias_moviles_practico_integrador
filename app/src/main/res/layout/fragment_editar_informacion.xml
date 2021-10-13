@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView_informacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/editar_informacion_titulo_height"
+        android:text="@string/editar_informacion_titulo"
+        android:textSize="@dimen/editar_informacion_titulo_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_dato_nombre_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editar_dato_margin_start"
+        android:layout_marginTop="@dimen/editar_informacion_dato_height"
+        android:text="@string/dato_nombre_usuario"
+        android:textSize="@dimen/editar_dato_titulo_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_informacion" />
+
+    <TextView
+        android:id="@+id/textView_sub_dato_nombre_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editar_sub_dato_margin_start"
+        android:layout_marginTop="@dimen/editar_sub_dato_height"
+        android:text="NOMBREUSUARIO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_dato_nombre_usuario" />
+
+    <TextView
+        android:id="@+id/textView_dato_nombre_personal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editar_dato_margin_start"
+        android:layout_marginTop="@dimen/editar_informacion_dato_height"
+        android:text="@string/dato_nombre_personal"
+        android:textSize="@dimen/editar_dato_titulo_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_dato_nombre_usuario" />
+
+    <TextView
+        android:id="@+id/textView_sub_dato_nombre_personal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editar_sub_dato_margin_start"
+        android:layout_marginTop="@dimen/editar_sub_dato_height"
+        android:text="NOMBREPERSONAL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_dato_nombre_personal" />
+
+    <TextView
+        android:id="@+id/textView_dato_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editar_dato_margin_start"
+        android:layout_marginTop="@dimen/editar_informacion_dato_height"
+        android:text="@string/dato_mail"
+        android:textSize="@dimen/editar_dato_titulo_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_dato_nombre_personal" />
+
+    <TextView
+        android:id="@+id/textView_sub_dato_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editar_sub_dato_margin_start"
+        android:layout_marginTop="@dimen/editar_sub_dato_height"
+        android:text="SUMAIL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_dato_mail" />
+
+    <ImageView
+        android:id="@+id/imageView_boton_nombre_usuario"
+        android:layout_width="@dimen/editar_dato_boton_width"
+        android:layout_height="@dimen/editar_dato_boton_height"
+        android:layout_marginStart="@dimen/editar_dato_boton_start_width"
+        android:layout_marginTop="@dimen/editar_dato_boton_top"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/editar_dato_boton_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_dato_nombre_usuario"
+        app:srcCompat="@drawable/ic_pencil_edit_button_svgrepo_com__1_"
+        app:tint="@color/teal_200"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView_boton_nombre_personal"
+        android:layout_width="@dimen/editar_dato_boton_width"
+        android:layout_height="@dimen/editar_dato_boton_height"
+        android:layout_marginStart="@dimen/editar_dato_boton_start_width"
+        android:layout_marginTop="@dimen/editar_dato_boton_top"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/editar_dato_boton_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_dato_nombre_personal"
+        app:srcCompat="@drawable/ic_pencil_edit_button_svgrepo_com__1_"
+        app:tint="@color/teal_200"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView_boton_mail"
+        android:layout_width="@dimen/editar_dato_boton_width"
+        android:layout_height="@dimen/editar_dato_boton_height"
+        android:layout_marginStart="@dimen/editar_dato_boton_start_width"
+        android:layout_marginTop="@dimen/editar_dato_boton_top"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/editar_dato_boton_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_dato_mail"
+        app:srcCompat="@drawable/ic_pencil_edit_button_svgrepo_com__1_"
+        app:tint="@color/teal_200"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button_cambio_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/boton_cambio_contrasenia_start_width"
+        android:layout_marginTop="@dimen/boton_cambio_contrasenia_top_height"
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/boton_cambio_contrasenia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_dato_mail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

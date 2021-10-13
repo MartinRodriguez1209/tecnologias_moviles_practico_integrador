@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">tecnologias_moviles_practico_integrador</string>
+    <string name="login_bienvenido">Bienvenido!</string>
+    <string name="nombre_usuario">Nombre de Usuario</string>
+    <string name="constrasenia_login">Contraseña</string>
+    <string name="login_boton">Iniciar Sesion</string>
+    <string name="login_boton_registrarse">Registrarse</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="login_text_recuperar_contrasenia"><u>¿Olvido su contraseña?</u></string>
+    <string name="registro_titulo">Registrarse</string>
+    <string name="registro_nombre_usuario">Ingrese su nombre de usuario</string>
+    <string name="registro_contrasenia">Ingrese su contraseña</string>
+    <string name="registro_nombre">Ingrese su nombre</string>
+    <string name="registro_apellido">Ingrese su apellido</string>
+    <string name="registro_mail">Ingrese su mail</string>
+    <string name="registro_boton">Crear cuenta</string>
+    <string name="cambio_contrasenia_titulo">Recuperacion de contraseña</string>
+    <string name="cambio_contrasenia_nombre_usuario">Ingese su nombre de usuario</string>
+    <string name="cambio_contrasenia_boton_texto">Cambiar contraseña</string>
+    <string name="cambio_contrasenia_nueva_contrasenia">Ingrese su nueva contraseña</string>
+    <string name="editar_nombre">Ingrese su nuevo nombre</string>
+    <string name="editar_apellido">Ingrese su nuevo apellido</string>
+    <string name="boton_siguiente">Siguiente</string>
+    <string name="editar_contrasenia">Ingrese su nueva contraseña</string>
+    <string name="editar_contrasenia_2">Vuelva a ingresar su nueva contrasenia</string>
+    <string name="editar_nombre_usuario">Ingrese su nuevo nombre de usuario</string>
+    <string name="editar_mail">Ingrese su nuevo mail</string>
+    <string name="cambio_nombre">Cambiar su nombre</string>
+    <string name="cambio_usuario">Cambiar su usuario</string>
+    <string name="cambio_contrasenia">Cambiar su contraseña</string>
+    <string name="cambio_mail">Cambiar su mail</string>
+    <string name="editar_informacion_titulo">Informacion de su cuenta</string>
+    <string name="dato_nombre_usuario">Nombre de usuario</string>
+    <string name="dato_nombre_personal">Nombre personal</string>
+    <string name="dato_mail">Su mail</string>
+    <string name="boton_cambio_contrasenia">Cambiar su contraseña</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="menu_boton_cuenta">Mi cuenta</string>
+    <string name="menu_boton_configuracion">Configuraciones</string>
+    <string name="menu_boton_salir">Cerrar sesion</string>
+    <string name="toolbar_text">Aplicacion</string>
+    <string name="toolbar_text_favoritos">Temas favoritos</string>
+    <string name="visor_texto_ejemplo">ACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTOAVAELTEXTOACAVAELTEXTO</string>
+    <string name="boton_favorito_toast">Se agrego a favoritos este tema</string>
+    <string name="menu_boton_favoritos">Favoritos</string>
+    <string name="menu_boton_contacto">Contacto</string>
+    <string name="configuraciones_titulo">Configuraciones</string>
+    <string name="configuraciones_ejemplo">Configuracion ejemplo</string>
+    <string name="configuraciones_notificacion">Recibir notificaciones</string>
+
+    
+
+</resources>

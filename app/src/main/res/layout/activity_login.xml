@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.LoginActivity">
+
+    <TextView
+        android:id="@+id/textView_bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_titulo_height"
+        android:gravity="center"
+        android:text="@string/login_bienvenido"
+        android:textSize="@dimen/letra_titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_margin"
+        android:layout_marginTop="@dimen/login_text_height"
+        android:ems="10"
+        android:hint="@string/nombre_usuario"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_bienvenida" />
+
+    <EditText
+        android:id="@+id/editText_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_margin"
+        android:layout_marginTop="@dimen/login_text_height"
+        android:ems="10"
+        android:hint="@string/constrasenia_login"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_usuario" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="@dimen/login_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_buttons_margin_width"
+        android:layout_marginTop="@dimen/login_text_height"
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/login_boton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_contrasenia" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="@dimen/login_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_buttons_margin_width"
+        android:layout_marginTop="@dimen/login_text_height"
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/login_boton_registrarse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    <TextView
+        android:id="@+id/text_olvido_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_recuperar_contrasenia_width"
+        android:layout_marginTop="@dimen/login_text_height"
+        android:clickable="true"
+        android:minHeight="@dimen/text_height"
+        android:text="@string/login_text_recuperar_contrasenia"
+        android:textColor="@color/teal_700"
+        android:textSize="@dimen/login_texto_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_register" />
+</androidx.constraintlayout.widget.ConstraintLayout>

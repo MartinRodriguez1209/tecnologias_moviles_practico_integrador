@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.LoginCambiarContraseniaActivity">
+
+    <TextView
+        android:id="@+id/textView_cambio_contrasenia_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_titulo_height"
+        android:gravity="center"
+        android:text="@string/cambio_contrasenia_titulo"
+        android:textSize="@dimen/letra_titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_margin"
+        android:layout_marginTop="@dimen/cambio_contrasenia_text_height"
+        android:text="@string/cambio_contrasenia_nombre_usuario"
+        android:textSize="@dimen/login_texto_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_cambio_contrasenia_titulo" />
+
+    <EditText
+        android:id="@+id/editText_usuario"
+        android:layout_width="@dimen/edit_text_min_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_margin"
+        android:layout_marginTop="@dimen/cambio_contrasenia_text_height"
+        android:minHeight="@dimen/edit_text_min_height"
+        android:textSize="@dimen/login_texto_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_usuario"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_margin"
+        android:layout_marginTop="@dimen/cambio_contrasenia_text_height"
+        android:text="@string/cambio_contrasenia_nueva_contrasenia"
+        android:textSize="@dimen/login_texto_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_usuario" />
+
+    <EditText
+        android:id="@+id/editText_contrasenia"
+        android:layout_width="@dimen/edit_text_min_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_margin"
+        android:layout_marginTop="@dimen/cambio_contrasenia_text_height"
+        android:minHeight="@dimen/edit_text_min_height"
+        android:textSize="@dimen/login_texto_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_contrasenia"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button_cambiar_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cambio_contrasenia_boton_width"
+        android:layout_marginTop="@dimen/cambio_contrasenia_boton_height"
+        android:text="@string/cambio_contrasenia_boton_texto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

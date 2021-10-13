@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:title="Opciones">
+        <menu>
+            <item
+                android:id="@+id/nav_cuenta"
+                android:icon="@drawable/cuenta_icono"
+                android:title="@string/menu_boton_cuenta" />
+
+            <item
+                android:id="@+id/nav_config"
+                android:icon="@drawable/configuracion_icono"
+                android:title="@string/menu_boton_configuracion" />
+
+
+            <item
+                android:id="@+id/nav_favoritos"
+                android:icon="@drawable/favoritos_menu_icono"
+                android:title="@string/menu_boton_favoritos" />
+
+
+            <item
+                android:id="@+id/nav_contacto_devs"
+                android:icon="@drawable/mail_menu_icono"
+                android:title="@string/menu_boton_contacto" />
+
+
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/exit_icono"
+                android:title="@string/menu_boton_salir" />
+        </menu>
+    </item>
+
+</menu>

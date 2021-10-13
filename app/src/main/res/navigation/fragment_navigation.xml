@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_navigation"
+    app:startDestination="@id/editarInformacionFragment">
+    <fragment
+        android:id="@+id/editarInformacionFragment"
+        android:name="com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionFragment"
+        android:label="EditarInformacionFragment"
+        tools:layout="@layout/fragment_editar_informacion">
+        <action
+            android:id="@+id/action_editarInformacionFragment_to_editarNombreFragment2"
+            app:destination="@id/editarNombreFragment" />
+        <action
+            android:id="@+id/action_editarInformacionFragment_to_editarNombreUsuarioFragment"
+            app:destination="@id/editarNombreUsuarioFragment" />
+        <action
+            android:id="@+id/action_editarInformacionFragment_to_editarMailFragment"
+            app:destination="@id/editarMailFragment" />
+        <action
+            android:id="@+id/action_editarInformacionFragment_to_editarContraseniaFragment"
+            app:destination="@id/editarContraseniaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarNombreFragment"
+        android:name="com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarNombreFragment"
+        android:label="EditarNombreFragment"
+        tools:layout="@layout/fragment_editar_nombre">
+        <action
+            android:id="@+id/action_editarNombreFragment_to_editarInformacionFragment"
+            app:destination="@id/editarInformacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarNombreUsuarioFragment"
+        android:name="com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarNombreUsuarioFragment"
+        android:label="EditarNombreUsuarioFragment"
+        tools:layout="@layout/fragment_editar_nombre_usuario">
+        <action
+            android:id="@+id/action_editarNombreUsuarioFragment_to_editarInformacionFragment"
+            app:destination="@id/editarInformacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarMailFragment"
+        android:name="com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarMailFragment"
+        android:label="EditarMailFragment"
+        tools:layout="@layout/fragment_editar_mail">
+        <action
+            android:id="@+id/action_editarMailFragment_to_editarInformacionFragment"
+            app:destination="@id/editarInformacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarContraseniaFragment"
+        android:name="com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarContraseniaFragment"
+        android:label="EditarContraseniaFragment"
+        tools:layout="@layout/fragment_editar_contrasenia" >
+        <action
+            android:id="@+id/action_editarContraseniaFragment_to_editarInformacionFragment"
+            app:destination="@id/editarInformacionFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".qr.visor.VisorQrActivity">
+
+    <TextView
+        android:id="@+id/textView_titulo_qr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/visor_titulo_height"
+        android:gravity="center"
+        android:text="ACA VA EL TITULO DEL QR"
+        android:textSize="@dimen/visor_titulo_text_size"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <ImageView
+        android:id="@+id/imageView_imagen_qr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/visor_foto_qr"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_zoom"
+        app:layout_constraintTop_toBottomOf="@id/textView_titulo_qr"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="125dp" />
+
+    <ImageView
+        android:id="@+id/imageView_youtube_button"
+        android:layout_width="@dimen/youtube_button"
+        android:layout_height="@dimen/youtube_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/youtube_button_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView_imagen_qr"
+        app:srcCompat="@mipmap/youtube_button_round"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView_link_button">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_contenido"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:padding="@dimen/visor_contenido_text_padding"
+                android:text="@string/visor_texto_ejemplo"
+                android:textSize="@dimen/visor_contenido_text_size" />
+
+        </ScrollView>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView_link_button"
+        android:layout_width="@dimen/link_button_size"
+        android:layout_height="@dimen/link_button_size"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/link_button_padding"
+        app:layout_constraintEnd_toStartOf="@id/imageView_youtube_button"
+        app:layout_constraintTop_toBottomOf="@id/imageView_imagen_qr"
+        app:srcCompat="@drawable/link_icon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView_favorito_button"
+        android:layout_width="@dimen/link_button_size"
+        android:layout_height="@dimen/link_button_size"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/link_button_padding"
+        app:layout_constraintEnd_toStartOf="@id/imageView_link_button"
+        app:layout_constraintTop_toBottomOf="@id/imageView_imagen_qr"
+        app:srcCompat="@drawable/favorito_corazon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
