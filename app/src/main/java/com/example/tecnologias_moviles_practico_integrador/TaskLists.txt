@@ -1,5 +1,6 @@
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
 TODO glide lista de imagenes
+TODO se rompio la navegacion del fragment de mi cuenta
 
 1. La aplicación deberá mostrar una pantalla inicial, splash.
 

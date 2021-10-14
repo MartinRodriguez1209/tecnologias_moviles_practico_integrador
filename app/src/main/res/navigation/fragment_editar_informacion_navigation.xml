@@ -11,16 +11,24 @@
         tools:layout="@layout/fragment_editar_informacion">
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarNombreFragment2"
-            app:destination="@id/editarNombreFragment" />
+            app:destination="@id/editarNombreFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarNombreUsuarioFragment"
-            app:destination="@id/editarNombreUsuarioFragment" />
+            app:destination="@id/editarNombreUsuarioFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true"  />
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarMailFragment"
-            app:destination="@id/editarMailFragment" />
+            app:destination="@id/editarMailFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarContraseniaFragment"
-            app:destination="@id/editarContraseniaFragment" />
+            app:destination="@id/editarContraseniaFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -30,7 +38,9 @@
         tools:layout="@layout/fragment_editar_nombre">
         <action
             android:id="@+id/action_editarNombreFragment_to_editarInformacionFragment"
-            app:destination="@id/editarInformacionFragment" />
+            app:destination="@id/editarInformacionFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editarNombreUsuarioFragment"
@@ -39,7 +49,9 @@
         tools:layout="@layout/fragment_editar_nombre_usuario">
         <action
             android:id="@+id/action_editarNombreUsuarioFragment_to_editarInformacionFragment"
-            app:destination="@id/editarInformacionFragment" />
+            app:destination="@id/editarInformacionFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editarMailFragment"
@@ -48,15 +60,19 @@
         tools:layout="@layout/fragment_editar_mail">
         <action
             android:id="@+id/action_editarMailFragment_to_editarInformacionFragment"
-            app:destination="@id/editarInformacionFragment" />
+            app:destination="@id/editarInformacionFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editarContraseniaFragment"
         android:name="com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarContraseniaFragment"
         android:label="EditarContraseniaFragment"
-        tools:layout="@layout/fragment_editar_contrasenia" >
+        tools:layout="@layout/fragment_editar_contrasenia">
         <action
             android:id="@+id/action_editarContraseniaFragment_to_editarInformacionFragment"
-            app:destination="@id/editarInformacionFragment" />
+            app:destination="@id/editarInformacionFragment"
+            app:popUpTo="@+id/fragment_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
