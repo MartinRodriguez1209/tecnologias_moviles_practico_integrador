@@ -76,11 +76,11 @@ class EditarInformacionFragment : Fragment() {
         }
 
 
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+/*        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
             val intent = Intent(activity, TemasActivity::class.java)
             intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-        }
+        }*/
     }
 
 

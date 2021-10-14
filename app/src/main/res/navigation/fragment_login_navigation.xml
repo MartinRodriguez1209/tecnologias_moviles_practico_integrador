@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_loginCambiarContraseniaFragment"
-            app:destination="@id/loginCambiarContraseniaFragment" />
+            app:destination="@id/loginCambiarContraseniaFragment"
+            app:popUpTo="@+id/main_nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_loginRegistrarseFragment"
-            app:destination="@id/loginRegistrarseFragment" />
+            app:destination="@id/loginRegistrarseFragment"
+            app:popUpTo="@+id/main_nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/loginCambiarContraseniaFragment"
@@ -24,7 +28,9 @@
         tools:layout="@layout/fragment_login_cambiar_contrasenia">
         <action
             android:id="@+id/action_loginCambiarContraseniaFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/main_nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/loginRegistrarseFragment"
@@ -33,6 +39,8 @@
         tools:layout="@layout/fragment_login_registrarse">
         <action
             android:id="@+id/action_loginRegistrarseFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/main_nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
