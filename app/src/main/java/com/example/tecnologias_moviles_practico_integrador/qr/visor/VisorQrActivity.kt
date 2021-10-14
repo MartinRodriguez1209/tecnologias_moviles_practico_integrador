@@ -36,7 +36,7 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         val nombre_tema: String?
         nombre_tema = intent.getStringExtra("nombre_tema")
         if (nombre_tema != null) {
-            binding.textViewTituloQr.setText(nombre_tema)
+            binding.textViewToolbar.setText(nombre_tema)
         }
         navMenu()
 
