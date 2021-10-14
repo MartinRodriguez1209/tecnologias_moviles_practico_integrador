@@ -1,5 +1,4 @@
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
-TODO GITHUBB
 TODO glide lista de imagenes
 
 1. La aplicación deberá mostrar una pantalla inicial, splash.
@@ -50,11 +49,11 @@ Pager, Recycler View, Glide o Picasso (Librería externa). (Extra) TODO funciona
 información, y otro si no puede conectarse a internet. (Dialogs)
 
 13. La aplicación deberá tener una pantalla de Settings (Configuraciones), donde el
-usuario puede elegir sus preferencias de usuario. (Shared Preferences). TODO creo que esta
+usuario puede elegir sus preferencias de usuario. (Shared Preferences).
 
 14. La aplicación deberá contener un menú de navegación que permita acceder a las
 distintas opciones (Inicio, Favoritos, Configuración, Editar Perfil, Cerrar Sesión)
-(Menú)  TODO casi completo Inicio?
+(Menú)
 
 15. La aplicación deberá permitir almacenar en Favoritos los items que el usuario
 seleccione. (Fragment - Persistencia).
