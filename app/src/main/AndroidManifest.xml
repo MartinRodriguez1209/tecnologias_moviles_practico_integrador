@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tecnologias_moviles_practico_integrador">
         <activity
+            android:name=".pruebas.PruebaViewPagerActivity"
+            android:exported="true" />
+        <activity
             android:name=".configuraciones.ConfiguracionesActivity"
             android:exported="true" />
         <activity
@@ -35,7 +38,7 @@
         <activity
             android:name=".qr.LectorQrActivity"
             android:exported="true"
-            android:noHistory="true" />         <!--noHistory hace que no se agregue al stack-->
+            android:noHistory="true" /> <!-- noHistory hace que no se agregue al stack -->
         <activity
             android:name=".pruebas.PruebaNavigationMenuActivity"
             android:exported="true" />
@@ -48,8 +51,6 @@
         <activity
             android:name=".inicio.InicioMenuActivity"
             android:exported="true" />
-
-
         <activity
             android:name=".login.LoginActivity"
             android:exported="true" />

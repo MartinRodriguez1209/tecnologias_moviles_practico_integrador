@@ -44,7 +44,7 @@ j. Latitud y Longitud.
 (* -> Significa que el campo puede ser opcional.)
 
 11. La aplicación deberá permitir visualizar las fotos de la galería de imágenes. (View
-Pager, Recycler View, Glide o Picasso (Librería externa). (Extra) TODO funciona, tratar de pasar varias imagenes
+Pager, Recycler View, Glide o Picasso (Librería externa). (Extra) TODO funciona, VIEWPAGER
 
 12. La aplicación muestra un mensaje de error cuando no puede actualizar la
 información, y otro si no puede conectarse a internet. (Dialogs)
