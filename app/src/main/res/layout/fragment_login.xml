@@ -43,7 +43,8 @@
         android:inputType="textPassword"
         android:minHeight="@dimen/edit_text_min_height"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_usuario"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button_login"
@@ -74,11 +75,11 @@
         android:layout_marginStart="@dimen/login_recuperar_contrasenia_width"
         android:layout_marginTop="@dimen/login_text_height"
         android:clickable="true"
+        android:focusable="true"
         android:minHeight="@dimen/text_height"
         android:text="@string/login_text_recuperar_contrasenia"
         android:textColor="@color/teal_700"
         android:textSize="@dimen/login_texto_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_register"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/button_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>
