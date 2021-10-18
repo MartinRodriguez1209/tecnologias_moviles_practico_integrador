@@ -37,7 +37,9 @@
        <item name="editar_sub_dato_horizontalBias" format="float" type="integer">0.15</item>
       -->
     <dimen name="editar_dato_titulo_size">18sp</dimen>
+    <integer name="min_ems">10</integer>
     <dimen name="editar_sub_dato_height">10dp</dimen>
+    <dimen name="default_hiehgt">0dp</dimen>
     <dimen name="editar_dato_margin_start">30dp</dimen>
     <dimen name="editar_sub_dato_margin_start">40dp</dimen>
     <dimen name="editar_dato_boton_start_width">200dp</dimen>

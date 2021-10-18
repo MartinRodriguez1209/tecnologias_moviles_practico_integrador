@@ -1,26 +1,14 @@
 package com.example.tecnologias_moviles_practico_integrador.editar_informacion
 
-import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP
-import android.graphics.Path
-import android.os.Binder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.viewbinding.ViewBindings
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityLoginBinding
-import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentEditarInformacionBinding
-import com.example.tecnologias_moviles_practico_integrador.inicio.InicioMenuActivity
-import com.example.tecnologias_moviles_practico_integrador.inicio.TemasActivity
-import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 
 class EditarInformacionFragment : Fragment() {
 

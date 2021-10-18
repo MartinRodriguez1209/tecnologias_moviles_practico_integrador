@@ -48,9 +48,7 @@
         <activity
             android:name=".inicio.TemasActivity"
             android:exported="true" />
-        <activity
-            android:name=".inicio.InicioMenuActivity"
-            android:exported="true" />
+
         <activity
             android:name=".login.LoginActivity"
             android:exported="true" />

@@ -25,10 +25,7 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
 
     private var temaList = mutableListOf<Tema>()
     private lateinit var drawer: DrawerLayout
-    private val CAMERA_PERMISSION_CODE = 100
-    private val PERMISSIONS: Array<String> = arrayOf(
-        android.Manifest.permission.CAMERA
-    )
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

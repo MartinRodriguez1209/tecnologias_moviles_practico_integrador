@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/editar_nombre_width"
         android:layout_marginTop="@dimen/editar_height"
-        android:ems="10"
+        android:ems="@integer/min_ems"
         android:inputType="textPersonName"
         android:minHeight="@dimen/edit_text_min_height"
         app:layout_constraintStart_toStartOf="parent"

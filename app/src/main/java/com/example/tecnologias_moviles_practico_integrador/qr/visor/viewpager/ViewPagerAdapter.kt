@@ -35,18 +35,13 @@ class ViewPagerAdapter(pruebaViewPager: PruebaViewPagerActivity, urls: Array<Str
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        // inflating the item.xml
+
         val itemView = mLayoutInflater.inflate(R.layout.item_prueba, container, false)
-
-        // referencing the image view from the item.xml file
         imageView = itemView.findViewById<View>(R.id.imageView_prueba) as ImageView
-
-        // setting the image in the imageView
         Glide.with(context).load(images[position]).into(imageView)
-
-
         Objects.requireNonNull(container).addView(itemView)
         return itemView!!
+
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {

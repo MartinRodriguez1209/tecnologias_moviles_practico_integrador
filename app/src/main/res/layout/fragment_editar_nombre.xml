@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/editar_nombre_width"
         android:layout_marginTop="@dimen/editar_height"
-        android:ems="10"
+        android:ems="@integer/min_ems"
         android:inputType="textPersonName"
         android:minHeight="@dimen/edit_text_min_height"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/editar_nombre_width"
         android:layout_marginTop="@dimen/editar_height"
-        android:ems="10"
+        android:ems="@integer/min_ems"
         android:inputType="textPersonName"
         android:minHeight="@dimen/edit_text_min_height"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,6 @@
         android:layout_marginStart="@dimen/editar_boton_width"
         android:layout_marginTop="@dimen/editar_boton_height"
         android:backgroundTint="@color/teal_700"
-
         android:text="@string/boton_siguiente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -11,11 +11,12 @@
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_nombre.xml" value="0.25" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_editar_nombre_usuario.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_inicio_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_lector_qr.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login_cambiar_contrasenia.xml" value="0.33" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login_registrarse.xml" value="0.25" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_navigation_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_navigation_menu.xml" value="0.18" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_qr.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_qr2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_view_pager.xml" value="0.36666666666666664" />
@@ -23,7 +24,7 @@
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_splash2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_splash_screen.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas.xml" value="0.25" />
-        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_favoritos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_favoritos.xml" value="0.27648578811369506" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_navgation_view.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_temas_prueba.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_visor_qr.xml" value="0.2" />

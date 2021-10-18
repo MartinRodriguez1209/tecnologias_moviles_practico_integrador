@@ -25,10 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/login_margin"
         android:layout_marginTop="@dimen/login_text_height"
-        android:ems="10"
+        android:ems="@integer/min_ems"
         android:hint="@string/nombre_usuario"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/edit_text_min_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_bienvenida" />
 
@@ -38,10 +38,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/login_margin"
         android:layout_marginTop="@dimen/login_text_height"
-        android:ems="10"
+        android:ems="@integer/min_ems"
         android:hint="@string/constrasenia_login"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:inputType="textPassword"
+        android:minHeight="@dimen/edit_text_min_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_usuario" />
 
@@ -79,5 +79,6 @@
         android:textColor="@color/teal_700"
         android:textSize="@dimen/login_texto_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_register" />
+        app:layout_constraintTop_toBottomOf="@+id/button_register"
+        android:focusable="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>

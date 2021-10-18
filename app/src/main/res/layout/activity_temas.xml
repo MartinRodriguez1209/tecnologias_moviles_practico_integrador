@@ -21,8 +21,7 @@
             android:background="?attr/colorPrimary"
             android:backgroundTint="@color/teal_700"
             android:minHeight="?attr/actionBarSize"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout"
-            >
+            app:layout_constraintTop_toTopOf="@id/constraintLayout">
 
             <TextView
                 android:id="@+id/textView_toolbar"
@@ -36,14 +35,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_temas"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/default_hiehgt"
             android:layout_marginHorizontal="@dimen/recycler_view_margin"
             android:layout_marginVertical="@dimen/recycler_view_margin"
-            android:layout_marginTop="60dp"
             android:scrollbars="vertical"
             app:layout_constraintBottom_toTopOf="@+id/imageView_qr_boton"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
-            tools:layout_editor_absoluteX="4dp"
             tools:listitem="@layout/item_view_tema" />
 
         <ImageView
@@ -51,6 +48,7 @@
             android:layout_width="@dimen/inicio_logo_width"
             android:layout_height="@dimen/inicio_logo_height"
             android:clickable="true"
+            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -66,8 +64,6 @@
         android:layout_gravity="start"
         android:clipToPadding="false"
         app:menu="@menu/main_menu" />
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

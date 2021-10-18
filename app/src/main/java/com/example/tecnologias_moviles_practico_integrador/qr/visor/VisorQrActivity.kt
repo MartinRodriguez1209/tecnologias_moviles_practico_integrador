@@ -13,10 +13,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.bumptech.glide.Glide
 import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
-import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityInicioMenuBinding
+
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityVisorQrBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
-import com.example.tecnologias_moviles_practico_integrador.inicio.TemasActivity
+
 import com.example.tecnologias_moviles_practico_integrador.inicio.TemasFavoritosActivity
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 import com.google.android.material.navigation.NavigationView
