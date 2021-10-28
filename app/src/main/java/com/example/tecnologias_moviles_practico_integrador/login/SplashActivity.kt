@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebaViewPagerActivity
 
 class SplashActivity : AppCompatActivity() {
 

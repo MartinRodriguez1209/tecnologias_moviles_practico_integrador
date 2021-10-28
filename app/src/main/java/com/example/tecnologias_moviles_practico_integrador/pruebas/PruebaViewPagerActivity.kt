@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.tecnologias_moviles_practico_integrador.R
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.tecnologias_moviles_practico_integrador.qr.visor.viewpager.ViewPagerAdapter
 
 
 class PruebaViewPagerActivity : AppCompatActivity() {
-
+    private lateinit var viewPager2: ViewPager2
     lateinit var mViewPager: ViewPager
     private val urls = arrayOf(
         "https://ichef.bbci.co.uk/news/640/cpsprodpb/150EA/production/_107005268_gettyimages-611696954.jpg",
@@ -22,11 +23,9 @@ class PruebaViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prueba_view_pager)
-        mViewPager = findViewById(R.id.view_pager_prueba)
-        viewpageadapter = ViewPagerAdapter(this, urls)
-        mViewPager.adapter = viewpageadapter
-
-        var viewpager = findViewById<ViewPager>(R.id.view_pager_prueba)
+        val adapter = PruebaViewPagerAdapter2(urls, this)
+        viewPager2 = findViewById(R.id.view_pager_prueba)
+        viewPager2.adapter = adapter
 
 
 

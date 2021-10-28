@@ -37,7 +37,5 @@ class LoginCambiarContraseniaFragment : Fragment() {
                 LoginCambiarContraseniaFragmentDirections.actionLoginCambiarContraseniaFragmentToLoginFragment()
             Navigation.findNavController(view).navigate(direction)
         }
-
-
     }
 }

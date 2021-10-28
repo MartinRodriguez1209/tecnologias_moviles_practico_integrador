@@ -1,7 +1,8 @@
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
 TODO glide lista de imagenes
 TODO se rompio la navegacion del fragment de mi cuenta
-
+TODO sharedpreference carpeta UTILS
+TODO preferenceScreen ?
 1. La aplicación deberá mostrar una pantalla inicial, splash.
 
 2. La aplicación debe permitir el login y registro de usuario en forma local. (Base de

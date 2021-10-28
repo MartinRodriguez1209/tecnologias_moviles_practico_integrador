@@ -31,12 +31,11 @@
         </androidx.appcompat.widget.Toolbar>
 
 
-        <ImageView
-            android:id="@+id/imageView_imagen_qr"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager_imagenes"
             android:layout_width="match_parent"
             android:layout_height="@dimen/visor_foto_qr"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_zoom"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             tools:layout_editor_absoluteX="121dp"
             tools:layout_editor_absoluteY="125dp" />
@@ -49,7 +48,7 @@
             android:focusable="true"
             android:padding="@dimen/youtube_button_padding"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView_imagen_qr"
+            app:layout_constraintTop_toBottomOf="@id/viewPager_imagenes"
             app:srcCompat="@mipmap/youtube_button_round"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -85,7 +84,7 @@
             android:focusable="true"
             android:padding="@dimen/link_button_padding"
             app:layout_constraintEnd_toStartOf="@id/imageView_youtube_button"
-            app:layout_constraintTop_toBottomOf="@id/imageView_imagen_qr"
+            app:layout_constraintTop_toBottomOf="@id/viewPager_imagenes"
             app:srcCompat="@drawable/link_icon"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -97,7 +96,7 @@
             android:focusable="true"
             android:padding="@dimen/link_button_padding"
             app:layout_constraintEnd_toStartOf="@id/imageView_link_button"
-            app:layout_constraintTop_toBottomOf="@id/imageView_imagen_qr"
+            app:layout_constraintTop_toBottomOf="@id/viewPager_imagenes"
             app:srcCompat="@drawable/favorito_corazon"
             tools:ignore="SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
