@@ -1,18 +1,20 @@
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
 TODO glide lista de imagenes
-TODO se rompio la navegacion del fragment de mi cuenta
 TODO sharedpreference carpeta UTILS
 TODO preferenceScreen ?
+TODO arreglar el boton back de los fragments
+
+
 1. La aplicación deberá mostrar una pantalla inicial, splash.
 
 2. La aplicación debe permitir el login y registro de usuario en forma local. (Base de
-Datos, Shared Preferences)
+Datos, Shared Preferences) TODO base de datos ROOM
 
 3. Deberá permitir cambiar contraseña en caso de olvido. (Base de datos, shared
-preferences).
+preferences). TODO ROOM
 
 4. La aplicación permite cambiar / editar la información del usuario. (Base de datos,
-shared preferences).
+shared preferences). TODO ROOM
 
 5. La aplicación deberá permitir abrir la cámara para escanear un código QR e
 interpretar el contenido. (Libreria externa).
@@ -45,7 +47,7 @@ j. Latitud y Longitud.
 (* -> Significa que el campo puede ser opcional.)
 
 11. La aplicación deberá permitir visualizar las fotos de la galería de imágenes. (View
-Pager, Recycler View, Glide o Picasso (Librería externa). (Extra) TODO funciona, VIEWPAGER
+Pager, Recycler View, Glide o Picasso (Librería externa). (Extra)
 
 12. La aplicación muestra un mensaje de error cuando no puede actualizar la
 información, y otro si no puede conectarse a internet. (Dialogs)
@@ -68,3 +70,13 @@ ejecución. (Permissions).
 
 18. Requerimientos Extra: Se podrá ubicar en un mapa de google maps los lugares
 donde se encuentran los QR.
+
+
+
+
+
+
+
+
+database
+tablas usuario y favoritos
