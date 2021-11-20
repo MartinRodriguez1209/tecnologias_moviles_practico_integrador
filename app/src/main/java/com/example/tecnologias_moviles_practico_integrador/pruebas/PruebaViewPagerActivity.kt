@@ -23,9 +23,11 @@ class PruebaViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prueba_view_pager)
+/*
         val adapter = PruebaViewPagerAdapter2(urls, this)
         viewPager2 = findViewById(R.id.view_pager_prueba)
         viewPager2.adapter = adapter
+*/
 
 
 

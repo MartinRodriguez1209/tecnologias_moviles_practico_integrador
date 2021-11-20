@@ -7,18 +7,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionFragmentDirections
+import com.example.tecnologias_moviles_practico_integrador.dao.DataBase
+import com.example.tecnologias_moviles_practico_integrador.data.Usuario
+import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
+import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginBinding
 import com.example.tecnologias_moviles_practico_integrador.inicio.TemasActivity
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import java.lang.Exception
+
 
 class LoginFragment : Fragment() {
 
     private lateinit var login_button: Button
     private lateinit var registrarse_button: Button
     private lateinit var olvido_contrasenia_button: TextView
+    private lateinit var binding: FragmentLoginBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +40,7 @@ class LoginFragment : Fragment() {
         login_button = view.findViewById(R.id.button_login)
         registrarse_button = view.findViewById(R.id.button_register)
         olvido_contrasenia_button = view.findViewById(R.id.text_olvido_contrasenia)
+        binding = FragmentLoginBinding.bind(view)
         return view
     }
 
@@ -37,8 +49,23 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         login_button.setOnClickListener() {
-            val intent = Intent(activity, TemasActivity::class.java)
-            startActivity(intent)
+            var usuarioWorker = UsuarioRepository(this.requireContext())
+            var usuario: Usuario?
+            val context = this.requireContext()
+            var job: Job? = null
+            job = GlobalScope.launch {
+                try {
+                    usuario = usuarioWorker.loginUsuarioCoroutine(
+                        binding.editTextUsuario.text.toString(),
+                        binding.editTextContrasenia.text.toString()
+                    )
+                    val intent = Intent(activity, TemasActivity::class.java)
+                    intent.putExtra("nombre_usuario", usuario!!.nombre)
+                    startActivity(intent)
+                } catch (e: Exception) {
+                // TODO livedata
+                }
+            }
         }
 
         registrarse_button.setOnClickListener() {

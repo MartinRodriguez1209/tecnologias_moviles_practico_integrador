@@ -11,7 +11,7 @@ import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.qr.visor.viewpager.ViewPagerAdapter
 
 
-class PruebaViewPagerAdapter2 (private val urls: Array<String>, private val context: Context
+class PruebaViewPagerAdapter2 (private val urls: List<String>, private val context: Context
 ) : RecyclerView.Adapter<PruebaViewPagerAdapter2.ViewPagerHolder>() {
 
 

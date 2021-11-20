@@ -17,6 +17,9 @@ interface UsuarioDao {
     @Query("SELECT * FROM tabla_usuario WHERE nombre_usuario = :nombredeusuario")
     fun selectUsuario(nombredeusuario:String):Usuario
 
+    @Query("SELECT * FROM tabla_usuario WHERE nombre_usuario = :nombredeusuario AND contrasenia = :contrasenia" )
+    fun selectUsuarioLogin(nombredeusuario:String, contrasenia:String):Usuario
+
     @Query("UPDATE tabla_usuario SET nombre = :nuevoNobre WHERE nombre_usuario = :nombreUsuario"  )
     fun updateNombre( nuevoNobre: String, nombreUsuario: String)
 

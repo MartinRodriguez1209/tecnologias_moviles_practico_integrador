@@ -1,0 +1,39 @@
+{
+    "items_list": [
+        {
+            "id": "1",
+            "title": "item museo 1",
+            "room_name": "item_museo_room_1"
+        },
+        {
+            "id": "2",
+            "title": "item museo 2",
+            "room_name": "item_museo_room_2"
+        },
+        {
+            "id": "3",
+            "title": "item museo 3",
+            "room_name": "item_museo_room_3"
+        },
+        {
+            "id": "4",
+            "title": "item museo 4",
+            "room_name": "item_museo_room_4"
+        },
+        {
+            "id": "5",
+            "title": "item museo 5",
+            "room_name": "item_museo_room_5"
+        },
+        {
+            "id": "6",
+            "title": "item museo 6",
+            "room_name": "item_museo_room_6"
+        },
+        {
+            "id": "7",
+            "title": "item museo 7",
+            "room_name": "item_museo_room_7"
+        }
+    ]
+}

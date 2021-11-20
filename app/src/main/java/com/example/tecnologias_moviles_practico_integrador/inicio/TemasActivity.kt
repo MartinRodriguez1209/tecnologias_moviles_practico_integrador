@@ -45,6 +45,9 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         val binding = ActivityTemasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initTemas()
+
+        Toast.makeText(this,intent.getStringExtra("nombre_usuario").toString(),Toast.LENGTH_LONG).show()
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = TemasAdapter(temaList, this)

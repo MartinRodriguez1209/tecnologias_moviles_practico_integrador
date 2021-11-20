@@ -25,7 +25,7 @@ class PruebasDataBase : AppCompatActivity() {
 
 
 
-        GlobalScope.launch {
+        /*GlobalScope.launch {
             val daoDummy = DataBase(applicationContext)
             val us = Usuario1(
                 id = null,
@@ -47,7 +47,7 @@ class PruebasDataBase : AppCompatActivity() {
             }catch (e: RuntimeException){
                 binding.textView.setText("usuario repetido")
             }
-        }
+        }*/
 
 
     }

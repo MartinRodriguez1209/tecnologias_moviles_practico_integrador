@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
@@ -13,7 +14,11 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallback
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
+import com.example.tecnologias_moviles_practico_integrador.data.ItemGallery
+import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseo
+import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityVisorQrBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
@@ -25,15 +30,22 @@ import com.google.android.material.navigation.NavigationView
 
 class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawer: DrawerLayout
-    private val urls = arrayOf(
-        "https://cdn.discordapp.com/attachments/733856868694491146/900569482831994890/Puepis_Linda.JPG","https://cdn.discordapp.com/attachments/733856868694491146/900569670342545458/unknown.png","https://ichef.bbci.co.uk/news/640/cpsprodpb/150EA/production/_107005268_gettyimages-611696954.jpg",
+/*    private val urls = arrayOf(
+        "https://cdn.discordapp.com/attachments/733856868694491146/900569482831994890/Puepis_Linda.JPG",
+        "https://cdn.discordapp.com/attachments/733856868694491146/900569670342545458/unknown.png",
+        "https://ichef.bbci.co.uk/news/640/cpsprodpb/150EA/production/_107005268_gettyimages-611696954.jpg",
         "https://cdn.britannica.com/q:60/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/767px-Cat_November_2010-1a.jpg",
         "https://steamuserimages-a.akamaihd.net/ugc/1661229473514719956/AA7CB1965DB65B7F07CF9B08E84CE5F0B0CCE0D0/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-        "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg","https://media.istockphoto.com/photos/european-short-haired-cat-picture-id1072769156?k=20&m=1072769156&s=612x612&w=0&h=k6eFXtE7bpEmR2ns5p3qe_KYh098CVLMz4iKm5OuO6Y=",
-        "https://static.independent.co.uk/2021/06/16/08/newFile-4.jpg?width=982&height=726&auto=webp&quality=75","https://i.redd.it/fkwh3urmz7931.jpg","https://i.pinimg.com/originals/e3/cb/60/e3cb607b361b35adb7444a10bf340723.png","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYZGB2y_eWS6Wo7YQvTZzCtDAkJh3R-AG8Q&usqp=CAU"
-    )
+        "https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg",
+        "https://media.istockphoto.com/photos/european-short-haired-cat-picture-id1072769156?k=20&m=1072769156&s=612x612&w=0&h=k6eFXtE7bpEmR2ns5p3qe_KYh098CVLMz4iKm5OuO6Y=",
+        "https://static.independent.co.uk/2021/06/16/08/newFile-4.jpg?width=982&height=726&auto=webp&quality=75",
+        "https://i.redd.it/fkwh3urmz7931.jpg",
+        "https://i.pinimg.com/originals/e3/cb/60/e3cb607b361b35adb7444a10bf340723.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYZGB2y_eWS6Wo7YQvTZzCtDAkJh3R-AG8Q&usqp=CAU"
+    )*/
     private lateinit var viewPager2: ViewPager2
+    private val itemMuseoWorker: ItemMuseoRepository = ItemMuseoRepository(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,15 +54,37 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         init(binding)
         val nombre_tema: String?
         nombre_tema = intent.getStringExtra("nombre_tema")
-        if (nombre_tema != null) {
-            binding.textViewToolbar.setText(nombre_tema)
-        }
-        viewPager()
+
         navMenu()
+        getItemMuseo(binding)
     }
 
-    fun viewPager(){
-        val adapter = PruebaViewPagerAdapter2(urls, this)
+
+    fun getItemMuseo(binding : ActivityVisorQrBinding) {
+        itemMuseoWorker.getItemMuseum(object: ActionListenerCallback {
+            override fun onActionSuccess(itemMuseo: ItemMuseo) {
+                Log.i("SUCCESS", itemMuseo.toString())
+                binding.textViewToolbar.setText(itemMuseo.item_title)
+                binding.textViewContenido.setText(itemMuseo.item_intro + itemMuseo.item_main_content)
+                Toast.makeText(applicationContext, itemMuseo.item_gallery[0].url,Toast.LENGTH_SHORT).show()
+                viewPager(itemMuseo.item_gallery)
+            }
+
+            override fun onActionFailure(throwableError: Throwable) {
+                Log.i("FAILURE", throwableError.message!!)
+            }
+        })
+
+
+    }
+
+
+    fun viewPager(urls: List<ItemGallery>) {
+        val urlsArray : MutableList<String> = emptyList<String>().toMutableList()
+        for (element in urls){
+            urlsArray.add(element.url)
+        }
+        val adapter = PruebaViewPagerAdapter2(urlsArray, this)
         viewPager2 = findViewById(R.id.viewPager_imagenes)
         viewPager2.adapter = adapter
     }
