@@ -33,9 +33,9 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         val binding = ActivityTemasFavoritosBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initTemas()
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
+/*        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TemasAdapter(temaList, this)
+        recyclerView.adapter = TemasAdapter(temaList, this)*/
         navMenu()
 
 

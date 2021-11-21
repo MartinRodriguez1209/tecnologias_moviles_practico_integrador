@@ -49,6 +49,7 @@
     <string name="configuraciones_ejemplo">Configuracion ejemplo</string>
     <string name="configuraciones_notificacion">Recibir notificaciones</string>
     <string name="usuario_incorrecto">usuario incorrecto</string>
+    <string name="video_fallo_mensaje">Ese item no tiene video</string>
 
 
 </resources>

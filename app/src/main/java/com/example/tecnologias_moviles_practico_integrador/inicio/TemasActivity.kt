@@ -18,7 +18,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallbackList
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
+import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
+import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityTemasBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
 import com.example.tecnologias_moviles_practico_integrador.inicio.recycle_view.Tema
@@ -31,26 +34,23 @@ import com.google.android.material.navigation.NavigationView
 class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
     NavigationView.OnNavigationItemSelectedListener {
 
-    private var temaList = mutableListOf<Tema>()
+    private var temaList: ItemMuseoTema = ItemMuseoTema(emptyList())
     private lateinit var drawer: DrawerLayout
     private val CAMERA_PERMISSION_CODE = 100
+    private val itemMuseoWorker: ItemMuseoRepository = ItemMuseoRepository(this)
     private val PERMISSIONS: Array<String> = arrayOf(
         android.Manifest.permission.CAMERA
     )
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityTemasBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Toast.makeText(this, intent.getStringExtra("nombre_usuario").toString(), Toast.LENGTH_LONG)
+            .show()
         initTemas()
 
-        Toast.makeText(this,intent.getStringExtra("nombre_usuario").toString(),Toast.LENGTH_LONG).show()
-
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TemasAdapter(temaList, this)
         navMenu()
         binding.imageViewQrBoton.setOnClickListener() {
             if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CAMERA)
@@ -64,8 +64,12 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         }
     }
 
+    fun recyclerView(temaList: ItemMuseoTema) {
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = TemasAdapter(temaList, this)
 
-
+    }
 
     fun navMenu() {
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -90,65 +94,38 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
     }
 
     private fun initTemas() {
-        val colors = mutableListOf<Tema>()
+        itemMuseoWorker.getItemMuseumTemaList(object : ActionListenerCallbackList {
+            override fun onActionSucces(museoSucces: ItemMuseoTema) {
+                Toast.makeText(
+                    applicationContext,
+                    museoSucces.item_gallery[0].titulo,
+                    Toast.LENGTH_SHORT
+                ).show()
+                temaList = museoSucces
+                recyclerView(temaList)
+            }
 
-        temaList.add(Tema("tema 1"))
-        temaList.add(Tema("tema 2"))
-        temaList.add(Tema("tema 3"))
-        temaList.add(Tema("tema 4"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 6"))
-        temaList.add(Tema("tema 7"))
-        temaList.add(Tema("tema 8"))
-        temaList.add(Tema("tema 1"))
-        temaList.add(Tema("tema 2"))
-        temaList.add(Tema("tema 3"))
-        temaList.add(Tema("tema 4"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 6"))
-        temaList.add(Tema("tema 7"))
-        temaList.add(Tema("tema 8"))
-        temaList.add(Tema("tema 1"))
-        temaList.add(Tema("tema 2"))
-        temaList.add(Tema("tema 3"))
-        temaList.add(Tema("tema 4"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 6"))
-        temaList.add(Tema("tema 7"))
-        temaList.add(Tema("tema 8"))
-        temaList.add(Tema("tema 1"))
-        temaList.add(Tema("tema 2"))
-        temaList.add(Tema("tema 3"))
-        temaList.add(Tema("tema 4"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 6"))
-        temaList.add(Tema("tema 7"))
-        temaList.add(Tema("tema 8"))
-        temaList.add(Tema("tema 1"))
-        temaList.add(Tema("tema 2"))
-        temaList.add(Tema("tema 3"))
-        temaList.add(Tema("tema 4"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 5"))
-        temaList.add(Tema("tema 6"))
-        temaList.add(Tema("tema 7"))
-        temaList.add(Tema("tema 8"))
+            override fun onActionFailure(throwableError: Throwable) {
+                Toast.makeText(
+                    applicationContext,
+                    "fallo al conseguir los temas",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
 
     }
 
     override fun onItemClick(position: Int) {
         Toast.makeText(
             baseContext,
-            "Apreto el tema: ${temaList[position].nombre_tema}",
+            "Apreto el tema: ${temaList.item_gallery[position].titulo}",
             Toast.LENGTH_SHORT
         ).show()
         val intent = Intent(this, VisorQrActivity::class.java)
 
-        intent.putExtra("nombre_tema", temaList[position].nombre_tema)
+        intent.putExtra("nombre_tema", temaList.item_gallery[position].titulo)
         startActivity(intent)
     }
 
