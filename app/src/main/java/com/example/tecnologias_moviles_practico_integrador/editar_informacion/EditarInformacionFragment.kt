@@ -9,6 +9,9 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.data.Usuario
+import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentEditarInformacionBinding
+import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginBinding
 
 class EditarInformacionFragment : Fragment() {
 
@@ -16,6 +19,7 @@ class EditarInformacionFragment : Fragment() {
     private lateinit var nombreUsuarioButton: ImageView
     private lateinit var mailButton: ImageView
     private lateinit var contraseniaButton: Button
+    private lateinit var binding: FragmentEditarInformacionBinding
 
 
     override fun onCreateView(
@@ -28,7 +32,10 @@ class EditarInformacionFragment : Fragment() {
         nombreUsuarioButton = view.findViewById(R.id.imageView_boton_nombre_usuario)
         mailButton = view.findViewById(R.id.imageView_boton_mail)
         contraseniaButton = view.findViewById(R.id.button_cambio_contrasenia)
-
+        binding = FragmentEditarInformacionBinding.bind(view)
+        binding.textViewSubDatoNombrePersonal.text = String.format("%s %s", Usuario.userInstance.nombre, Usuario.userInstance.apellido)
+        binding.textViewSubDatoMail.text = Usuario.userInstance.mail
+        binding.textViewSubDatoNombreUsuario.text = Usuario.userInstance.nombre_usuario
         return view
     }
 
@@ -70,7 +77,6 @@ class EditarInformacionFragment : Fragment() {
             startActivity(intent)
         }*/
     }
-
 
 
 }

@@ -59,6 +59,7 @@ class LoginFragment : Fragment() {
                         binding.editTextUsuario.text.toString(),
                         binding.editTextContrasenia.text.toString()
                     )
+                    usuario?.let { it1 -> Usuario.instanceUser(it1) }
                     val intent = Intent(activity, TemasActivity::class.java)
                     intent.putExtra("nombre_usuario", usuario!!.nombre)
                     startActivity(intent)

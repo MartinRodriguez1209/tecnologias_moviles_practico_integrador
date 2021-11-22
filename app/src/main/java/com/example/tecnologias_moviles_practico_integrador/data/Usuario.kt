@@ -17,5 +17,15 @@ data class Usuario(
     @ColumnInfo(name = "apellido") var apellido: String,
     @ColumnInfo(name = "mail") var mail: String,
     @ColumnInfo(name = "contrasenia") var contrasenia: String
+){
 
-)
+
+    companion object UserInstance{
+        @Volatile  lateinit var userInstance : Usuario
+        fun instanceUser(user: Usuario){
+            userInstance = user
+        }
+
+
+    }
+}

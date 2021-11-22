@@ -21,6 +21,7 @@ import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallbackList
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
 import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
+import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityTemasBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
@@ -47,7 +48,9 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         super.onCreate(savedInstanceState)
         val binding = ActivityTemasBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Toast.makeText(this, intent.getStringExtra("nombre_usuario").toString(), Toast.LENGTH_LONG)
+        Toast.makeText(this, Usuario.userInstance?.nombre, Toast.LENGTH_LONG)
+            .show()
+        Toast.makeText(this, Usuario.userInstance?.apellido, Toast.LENGTH_LONG)
             .show()
         initTemas()
 
@@ -96,11 +99,6 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
     private fun initTemas() {
         itemMuseoWorker.getItemMuseumTemaList(object : ActionListenerCallbackList {
             override fun onActionSucces(museoSucces: ItemMuseoTema) {
-                Toast.makeText(
-                    applicationContext,
-                    museoSucces.item_gallery[0].titulo,
-                    Toast.LENGTH_SHORT
-                ).show()
                 temaList = museoSucces
                 recyclerView(temaList)
             }

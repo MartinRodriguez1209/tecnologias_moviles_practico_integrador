@@ -50,6 +50,7 @@
     <string name="configuraciones_notificacion">Recibir notificaciones</string>
     <string name="usuario_incorrecto">usuario incorrecto</string>
     <string name="video_fallo_mensaje">Ese item no tiene video</string>
+    <string name="contrasenia_cambio_error">Las contraseñas deben coincidir</string>
 
 
 </resources>

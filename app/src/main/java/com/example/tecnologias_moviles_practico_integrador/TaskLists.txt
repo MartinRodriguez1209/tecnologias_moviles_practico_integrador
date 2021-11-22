@@ -97,7 +97,8 @@ donde se encuentran los QR.
 
 
 
-TODO favoritos, editar perfil con base de datos, algun shared preference para config, ejemplo del qr, recycler view, dialogos(LiveData?),
+TODO favoritos, editar perfil con base de datos, algun shared preference para config, ejemplo del qr, recycler view, dialogos(LiveData?)
+TODO validaciones de los campos
 }
 
 database

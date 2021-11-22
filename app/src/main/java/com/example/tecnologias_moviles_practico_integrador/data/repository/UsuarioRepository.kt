@@ -18,99 +18,33 @@ import kotlinx.coroutines.runBlocking
 
 class UsuarioRepository(context: Context) {
 
-    private val usuarioDb = DataBase(context)
+    private val usuarioDao = DataBase.invoke(context).usuarioDao()
     private var listener: ActionListenerCallback? = null
     private lateinit var response: Call<Usuario>
 
 
+    suspend fun loginUsuarioCoroutine(nombreUsuario: String, contrasenia: String): Usuario? =
+        usuarioDao?.selectUsuarioLogin(nombreUsuario, contrasenia)
 
-    fun loginUsuarioCoroutine(nombreUsuario: String, contrasenia: String): Usuario? = usuarioDb.usuarioDao()?.selectUsuarioLogin(nombreUsuario, contrasenia)
 
-
-    fun loginUsuario(nombreUsuario: String, contrasenia: String): Usuario {
-        lateinit var usuario: Usuario
-        val launch = GlobalScope.launch {
-            try {
-                usuario =
-                    usuarioDb.usuarioDao()?.selectUsuarioLogin(nombreUsuario, contrasenia)!!
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
-        return usuario
+    suspend fun insertUsuario(usuario: Usuario) {
+        usuarioDao?.insert(usuario)
     }
 
-
-    fun insertUsuario(usuario: Usuario) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.insert(usuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
+    suspend fun updateNombreUsuario(nuevoNombreUsuario: String, nombreUsuarioActual: String) {
+        usuarioDao?.updateNombreUsuario(nuevoNombreUsuario, nombreUsuarioActual)
     }
 
-    fun selectUsuario(nombreUsuario: String) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.selectUsuario(nombreUsuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
+    suspend fun updateNombre(nuevoNombre: String, nombreActual: String, nuevoApellido: String) {
+        usuarioDao?.updateNombre(nuevoNombre, nombreActual, nuevoApellido)
     }
 
-    fun updateNombre(nuevoNombre: String, nombreUsuario: String) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.updateNombre(nuevoNombre, nombreUsuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
-
+    suspend fun updateMail(nuevoMail: String, nombreUsuarioActual: String) {
+        usuarioDao?.updateMail(nuevoMail, nombreUsuarioActual)
     }
 
-    fun updateNombreUsuario(nuevoNombreUsuario: String, nombreUsuario: String) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.updateNombreUsuario(nuevoNombreUsuario, nombreUsuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
+    suspend fun updateContrasenia(nuevaContrasenia: String, nombreUsuarioActual: String) {
+        usuarioDao?.updateContrasenia(nuevaContrasenia,nombreUsuarioActual)
     }
 
-
-    fun updateMail(nuevoMail: String, nombreUsuario: String) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.updateMail(nuevoMail, nombreUsuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
-    }
-
-
-    fun updateApellido(nuevoApellido: String, nombreUsuario: String) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.updateApellido(nuevoApellido, nombreUsuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
-    }
-
-    fun updateContrasenia(nuevoContrasenia: String, nombreUsuario: String) {
-        GlobalScope.launch {
-            try {
-                usuarioDb.usuarioDao()?.updateContrasenia(nuevoContrasenia, nombreUsuario)
-            } catch (e: RuntimeException) {
-                throw e
-            }
-        }
-    }
 }

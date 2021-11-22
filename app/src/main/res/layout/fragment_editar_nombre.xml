@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="@id/editText_usuario" />
 
     <EditText
-        android:id="@+id/editTextText_apelldio"
+        android:id="@+id/editText_apelldio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/editar_nombre_width"

@@ -15,6 +15,7 @@ import androidx.viewbinding.ViewBinding
 import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.dao.DataBase
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
+import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityLoginBinding
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginRegistrarseBinding
 import kotlinx.coroutines.GlobalScope
@@ -25,6 +26,7 @@ class LoginRegistrarseFragment : Fragment() {
     private lateinit var binding: FragmentLoginRegistrarseBinding
     private lateinit var registrarse_button: Button
     private lateinit var usuario: Usuario
+    private lateinit var usuarioWorker: UsuarioRepository
 
 
     override fun onCreateView(
@@ -52,10 +54,9 @@ class LoginRegistrarseFragment : Fragment() {
                 mail = binding.editTextMail.text.toString(),
                 contrasenia = binding.editTextContrasenia.text.toString()
             )
-            val context = requireContext()
+            usuarioWorker = UsuarioRepository(this.requireContext())
             GlobalScope.launch {
-                val daoAcces = DataBase(context)
-                daoAcces.usuarioDao()?.insert(usuario)
+                usuarioWorker.insertUsuario(usuario)
             }
             val direction =
                 LoginRegistrarseFragmentDirections.actionLoginRegistrarseFragmentToLoginFragment()
