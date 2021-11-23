@@ -25,7 +25,5 @@ data class Usuario(
         fun instanceUser(user: Usuario){
             userInstance = user
         }
-
-
     }
 }

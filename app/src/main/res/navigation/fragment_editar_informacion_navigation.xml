@@ -12,22 +12,22 @@
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarNombreFragment2"
             app:destination="@id/editarNombreFragment"
-            app:popUpTo="@+id/fragment_navigation"
+            app:popUpTo="@+id/action_editarNombreFragment_to_editarInformacionFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarNombreUsuarioFragment"
             app:destination="@id/editarNombreUsuarioFragment"
-            app:popUpTo="@+id/fragment_navigation"
+            app:popUpTo="@+id/action_editarNombreUsuarioFragment_to_editarInformacionFragment"
             app:popUpToInclusive="true"  />
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarMailFragment"
             app:destination="@id/editarMailFragment"
-            app:popUpTo="@+id/fragment_navigation"
+            app:popUpTo="@+id/action_editarMailFragment_to_editarInformacionFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_editarInformacionFragment_to_editarContraseniaFragment"
             app:destination="@id/editarContraseniaFragment"
-            app:popUpTo="@+id/fragment_navigation"
+            app:popUpTo="@+id/action_editarContraseniaFragment_to_editarInformacionFragment"
             app:popUpToInclusive="true" />
     </fragment>
 

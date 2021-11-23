@@ -13,13 +13,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.Util.Utilities
 import com.example.tecnologias_moviles_practico_integrador.dao.DataBase
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
-import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityLoginBinding
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginRegistrarseBinding
+
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlin.properties.Delegates
 
 class LoginRegistrarseFragment : Fragment() {
 
@@ -27,6 +29,7 @@ class LoginRegistrarseFragment : Fragment() {
     private lateinit var registrarse_button: Button
     private lateinit var usuario: Usuario
     private lateinit var usuarioWorker: UsuarioRepository
+    private var validation: Boolean = true
 
 
     override fun onCreateView(
@@ -44,25 +47,32 @@ class LoginRegistrarseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registrarse_button.setOnClickListener() {
-            Toast.makeText(context, binding.editTextNombre.text.toString(), Toast.LENGTH_SHORT)
-                .show()
-            usuario = Usuario(
-                id = null,
-                nombre_usuario = binding.editTextUsuario.text.toString(),
-                nombre = binding.editTextNombre.text.toString(),
-                apellido = binding.editTextApellido.text.toString(),
-                mail = binding.editTextMail.text.toString(),
-                contrasenia = binding.editTextContrasenia.text.toString()
-            )
-            usuarioWorker = UsuarioRepository(this.requireContext())
-            GlobalScope.launch {
-                usuarioWorker.insertUsuario(usuario)
+            if (binding.editTextMail.text.isEmpty() or !Utilities.mailValidation(binding.editTextMail.text.toString())) {
+                validation = false
+                Toast.makeText(
+                    this.requireContext(),
+                    "El mail debe tener un formato valido",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
             }
-            val direction =
-                LoginRegistrarseFragmentDirections.actionLoginRegistrarseFragmentToLoginFragment()
-            Navigation.findNavController(view).navigate(direction)
+            if (validation) {
+                usuario = Usuario(
+                    id = null,
+                    nombre_usuario = binding.editTextUsuario.text.toString(),
+                    nombre = binding.editTextNombre.text.toString(),
+                    apellido = binding.editTextApellido.text.toString(),
+                    mail = binding.editTextMail.text.toString(),
+                    contrasenia = binding.editTextContrasenia.text.toString()
+                )
+                usuarioWorker = UsuarioRepository(this.requireContext())
+                GlobalScope.launch {
+                    usuarioWorker.insertUsuario(usuario)
+                }
+                val direction =
+                    LoginRegistrarseFragmentDirections.actionLoginRegistrarseFragmentToLoginFragment()
+                Navigation.findNavController(view).navigate(direction)
+            }
         }
-
-
     }
 }

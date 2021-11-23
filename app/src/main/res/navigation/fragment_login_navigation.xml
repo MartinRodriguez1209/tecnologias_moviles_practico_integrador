@@ -13,12 +13,12 @@
         <action
             android:id="@+id/action_loginFragment_to_loginCambiarContraseniaFragment"
             app:destination="@id/loginCambiarContraseniaFragment"
-            app:popUpTo="@+id/fragment_login_navigation"
+            app:popUpTo="@+id/action_loginCambiarContraseniaFragment_to_loginFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_loginRegistrarseFragment"
             app:destination="@id/loginRegistrarseFragment"
-            app:popUpTo="@+id/fragment_login_navigation"
+            app:popUpTo="@+id/action_loginRegistrarseFragment_to_loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
