@@ -34,7 +34,6 @@ class LectorQrActivity : AppCompatActivity() {
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, VisorQrActivity::class.java)
                 intent.putExtra("qr",it.text)
                 startActivity(intent)

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class ItemMuseoTema(
     @SerializedName("items_list")
-    val item_gallery: List<ItemMuseoTemaGallery>
+    var item_gallery: List<ItemMuseoTemaGallery>
 
 )
 

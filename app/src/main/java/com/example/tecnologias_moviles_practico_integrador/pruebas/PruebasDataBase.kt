@@ -25,29 +25,7 @@ class PruebasDataBase : AppCompatActivity() {
 
 
 
-        /*GlobalScope.launch {
-            val daoDummy = DataBase(applicationContext)
-            val us = Usuario1(
-                id = null,
-                nombre = "martin123",
-                nombre_usuario = "martin123",
-                apellido = "rodriguez123",
-                mail = "martin@mail123",
-                contrasenia = "123456"
-            )
 
-
-
-            try {
-                daoDummy.usuarioDao()?.insert(us)
-                val us2 = daoDummy.usuarioDao()?.selectUsuario("martin123")
-                if (us2 != null) {
-                    binding.textView.setText(us2.nombre_usuario)
-                }
-            }catch (e: RuntimeException){
-                binding.textView.setText("usuario repetido")
-            }
-        }*/
 
 
     }

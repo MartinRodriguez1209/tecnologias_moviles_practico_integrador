@@ -13,29 +13,35 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
+import com.example.tecnologias_moviles_practico_integrador.data.ItemFavorito
+import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
+import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTemaGallery
+import com.example.tecnologias_moviles_practico_integrador.data.Usuario
+import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityTemasFavoritosBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
 import com.example.tecnologias_moviles_practico_integrador.inicio.recycle_view.Tema
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 import com.example.tecnologias_moviles_practico_integrador.qr.visor.VisorQrActivity
 import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
     NavigationView.OnNavigationItemSelectedListener {
 
-    private var temaList = mutableListOf<Tema>()
     private lateinit var drawer: DrawerLayout
-
-
+    private lateinit var temaListFavorito: List<ItemFavorito>
+    private val itemMuseoWorker: ItemMuseoRepository = ItemMuseoRepository(this)
+    private var temaList: ItemMuseoTema = ItemMuseoTema(emptyList())
+    private var temaListAux: MutableList<ItemMuseoTemaGallery> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityTemasFavoritosBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initTemas()
-/*        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TemasAdapter(temaList, this)*/
+
         navMenu()
 
 
@@ -63,66 +69,35 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         }
     }
 
+    fun recyclerView(){
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = TemasAdapter(temaList, this)
+    }
+
     private fun initTemas() {
-        val colors = mutableListOf<Tema>()
 
-        temaList.add(Tema("tema favorito 1"))
-        temaList.add(Tema("tema favorito 2"))
-        temaList.add(Tema("tema favorito 3"))
-        temaList.add(Tema("tema favorito 4"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 6"))
-        temaList.add(Tema("tema favorito 7"))
-        temaList.add(Tema("tema favorito 8"))
-        temaList.add(Tema("tema favorito 1"))
-        temaList.add(Tema("tema favorito 2"))
-        temaList.add(Tema("tema favorito 3"))
-        temaList.add(Tema("tema favorito 4"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 6"))
-        temaList.add(Tema("tema favorito 7"))
-        temaList.add(Tema("tema favorito 8"))
-        temaList.add(Tema("tema favorito 1"))
-        temaList.add(Tema("tema favorito 2"))
-        temaList.add(Tema("tema favorito 3"))
-        temaList.add(Tema("tema favorito 4"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 6"))
-        temaList.add(Tema("tema favorito 7"))
-        temaList.add(Tema("tema favorito 8"))
-        temaList.add(Tema("tema favorito 1"))
-        temaList.add(Tema("tema favorito 2"))
-        temaList.add(Tema("tema favorito 3"))
-        temaList.add(Tema("tema favorito 4"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 6"))
-        temaList.add(Tema("tema favorito 7"))
-        temaList.add(Tema("tema favorito 8"))
-        temaList.add(Tema("tema favorito 1"))
-        temaList.add(Tema("tema favorito 2"))
-        temaList.add(Tema("tema favorito 3"))
-        temaList.add(Tema("tema favorito 4"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 5"))
-        temaList.add(Tema("tema favorito 6"))
-        temaList.add(Tema("tema favorito 7"))
-        temaList.add(Tema("tema favorito 8"))
 
+        GlobalScope.launch {
+            temaListFavorito = itemMuseoWorker.getFavoritos(Usuario.userInstance.nombre_usuario)!!
+            for (i in 0 until temaListFavorito.size) {
+             temaListAux.add(ItemMuseoTemaGallery(temaListFavorito[i].id,temaListFavorito[i].titulo,temaListFavorito[i].roomName))
+            }
+            temaList.item_gallery= temaListAux
+            recyclerView()
+
+        }
 
     }
 
     override fun onItemClick(position: Int) {
         Toast.makeText(
             baseContext,
-            "Apreto el tema: ${temaList[position].nombre_tema}",
+            "Apreto el tema: ${temaList.item_gallery[position].titulo}",
             Toast.LENGTH_SHORT
         ).show()
         val intent = Intent(this, VisorQrActivity::class.java)
-        intent.putExtra("nombre_tema", temaList[position].nombre_tema)
+        intent.putExtra("nombre_tema", temaList.item_gallery[position].titulo)
         startActivity(intent)
     }
 

@@ -96,8 +96,9 @@ donde se encuentran los QR.
 
 
 
-TODO favoritos,  algun shared preference para config, ejemplo del qr, dialogos(LiveData?)
+TODO favoritos,  algun shared preference para config, ejemplo del qr, dialogos(withContext(Dispatchers.Main) para las corrutinas)
 TODO validaciones de los campos
+TODO mantener la sesion iniciada
 }
 
 database

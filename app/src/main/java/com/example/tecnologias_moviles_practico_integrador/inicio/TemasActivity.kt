@@ -16,18 +16,14 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallbackList
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
 import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
-import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityTemasBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
-import com.example.tecnologias_moviles_practico_integrador.inicio.recycle_view.Tema
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
-import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebaViewPagerAdapter2
 import com.example.tecnologias_moviles_practico_integrador.qr.LectorQrActivity
 import com.example.tecnologias_moviles_practico_integrador.qr.visor.VisorQrActivity
 import com.google.android.material.navigation.NavigationView
@@ -48,10 +44,6 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         super.onCreate(savedInstanceState)
         val binding = ActivityTemasBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Toast.makeText(this, Usuario.userInstance?.nombre, Toast.LENGTH_LONG)
-            .show()
-        Toast.makeText(this, Usuario.userInstance?.apellido, Toast.LENGTH_LONG)
-            .show()
         initTemas()
 
         navMenu()
@@ -110,19 +102,11 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
                     Toast.LENGTH_SHORT
                 ).show()
             }
-
         })
-
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(
-            baseContext,
-            "Apreto el tema: ${temaList.item_gallery[position].titulo}",
-            Toast.LENGTH_SHORT
-        ).show()
         val intent = Intent(this, VisorQrActivity::class.java)
-
         intent.putExtra("nombre_tema", temaList.item_gallery[position].titulo)
         startActivity(intent)
     }

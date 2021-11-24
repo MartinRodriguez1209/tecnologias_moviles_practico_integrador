@@ -12,14 +12,11 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.dao.DataBase
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginBinding
 import com.example.tecnologias_moviles_practico_integrador.inicio.TemasActivity
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.lang.Exception
 
 
@@ -64,7 +61,10 @@ class LoginFragment : Fragment() {
                     intent.putExtra("nombre_usuario", usuario!!.nombre)
                     startActivity(intent)
                 } catch (e: Exception) {
-                // TODO livedata
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(context, getString(R.string.fallo_login), Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
             }
         }
