@@ -14,9 +14,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.tecnologias_moviles_practico_integrador.R
 import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallback
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
-import com.example.tecnologias_moviles_practico_integrador.data.ItemGallery
-import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseo
-import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
+import com.example.tecnologias_moviles_practico_integrador.data.*
 import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityVisorQrBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
@@ -24,12 +22,20 @@ import com.example.tecnologias_moviles_practico_integrador.inicio.TemasFavoritos
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebaViewPagerAdapter2
 import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+
     private lateinit var drawer: DrawerLayout
     private lateinit var viewPager2: ViewPager2
     private val itemMuseoWorker: ItemMuseoRepository = ItemMuseoRepository(this)
     private lateinit var youtubeUrl: String
+    private lateinit var itemMuseo: ItemMuseo
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityVisorQrBinding.inflate(layoutInflater)
@@ -53,6 +59,7 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 ).show()
                 viewPager(museoSucces.item_gallery)
                 youtubeUrl = museoSucces.item_youtube
+                itemMuseo = museoSucces
             }
 
 
@@ -109,6 +116,7 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             Toast.makeText(this, "ESTE BOTON ES DE LINK EXTERNO", Toast.LENGTH_SHORT).show()
         }
         binding.imageViewFavoritoButton.setOnClickListener() {
+            agregarFavorito()
             Toast.makeText(this, R.string.boton_favorito_toast, Toast.LENGTH_SHORT).show()
         }
     }
@@ -136,5 +144,12 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         }
         drawer.closeDrawer(GravityCompat.START);
         return true
+    }
+
+    fun agregarFavorito(){
+        val itemFavorito = ItemFavorito(itemMuseo.id,itemMuseo.item_title, Usuario.userInstance.nombre_usuario,itemMuseo.room_name)
+        GlobalScope.launch {
+            itemMuseoWorker.insertItemFavorito(itemFavorito)
+        }
     }
 }

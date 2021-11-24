@@ -1,8 +1,7 @@
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
-TODO glide lista de imagenes
-TODO sharedpreference carpeta UTILS
+TODO sharedpreference
 TODO preferenceScreen ?
-TODO arreglar el boton back de los fragments
+
 
 
 1. La aplicación deberá mostrar una pantalla inicial, splash.

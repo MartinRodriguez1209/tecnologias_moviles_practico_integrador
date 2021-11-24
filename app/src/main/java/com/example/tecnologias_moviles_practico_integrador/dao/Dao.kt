@@ -1,7 +1,9 @@
 package com.example.tecnologias_moviles_practico_integrador.dao
 
 import androidx.room.*
+import com.example.tecnologias_moviles_practico_integrador.data.ItemFavorito
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
+
 
 
 @Dao
@@ -34,6 +36,22 @@ interface UsuarioDao {
 
     @Query("UPDATE tabla_usuario SET contrasenia = :nuevoContrasenia WHERE nombre_usuario = :nombreUsuario")
     suspend fun updateContrasenia(nuevoContrasenia: String, nombreUsuario: String)
+
+
+}
+
+@Dao
+interface ItemFavoritoDao {
+
+    @Insert(onConflict = OnConflictStrategy.ABORT)
+    suspend fun insert(temaFavorito: ItemFavorito)
+
+    @Query("SELECT * FROM tabla_tema_favorito WHERE nombre_usuario = :nombredeusuario")
+    suspend fun selectTodosFavoritos(nombredeusuario: String): List<ItemFavorito>
+
+    @Query("DELETE FROM tabla_tema_favorito WHERE nombre_usuario = :nombredeusuario AND id = :id")
+    suspend fun deleteFavorito(nombredeusuario: String, id: String)
+
 
 
 }
