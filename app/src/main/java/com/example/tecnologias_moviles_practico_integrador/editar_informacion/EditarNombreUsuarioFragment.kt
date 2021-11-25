@@ -12,6 +12,7 @@ import com.example.tecnologias_moviles_practico_integrador.util.Utilities
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentEditarNombreUsuarioBinding
+import com.example.tecnologias_moviles_practico_integrador.util.PreferenceUtil
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -19,6 +20,7 @@ class EditarNombreUsuarioFragment : Fragment() {
 
     private lateinit var myFirstFragmentButton: Button
     private lateinit var binding: FragmentEditarNombreUsuarioBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,11 +40,13 @@ class EditarNombreUsuarioFragment : Fragment() {
         myFirstFragmentButton.setOnClickListener {
             val context = this.requireContext()
             var usuarioWorker = UsuarioRepository(this.requireContext())
-           GlobalScope.launch {
+            GlobalScope.launch {
                 usuarioWorker.updateNombreUsuario(
                     binding.editTextUsuario.text.toString(),
                     Usuario.userInstance.nombre_usuario
                 )
+                val preference = PreferenceUtil(context)
+                preference.setUserLogin(binding.editTextUsuario.text.toString())
                 Utilities.usuarioRefresh(binding.editTextUsuario.text.toString(), context)
             }
             Navigation.findNavController(view).navigate(direction)
