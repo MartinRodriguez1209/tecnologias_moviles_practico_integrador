@@ -18,7 +18,7 @@ class ItemMuseoRepository(context: Context) {
     private var listener: ActionListenerCallback? = null
     private var listenerList: ActionListenerCallbackList? = null
     private lateinit var response: Call<ItemMuseo>
-    private lateinit var qrid: String
+    private  var qrid: String? =null
     private lateinit var responseList: Call<ItemMuseoTema>
     private val favoritoDao = DataBase.invoke(context).ItemFavoritoDao()
 
@@ -29,7 +29,11 @@ class ItemMuseoRepository(context: Context) {
     fun getItemMuseum(callback: ActionListenerCallback) {
         listener = callback
         val museumService = NetworkingImplementation().service
-        response = museumService.getMuseumItem()
+        response = if(qrid == null){
+            museumService.getMuseumItem()
+        } else{
+            museumService.getMuseumItem(qrid!!)
+        }
         response.enqueue(object : Callback<ItemMuseo> {
             override fun onResponse(call: Call<ItemMuseo>, response: Response<ItemMuseo>) {
                 response.body()?.let {

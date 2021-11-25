@@ -1,0 +1,42 @@
+{
+  "id": "1234567890123",
+  "item_title": "Mirage V",
+  "room_name": "Sala de Aviones",
+  "item_intro": "El Sistema de Armas Mirage marcó una nueva época en la Fuerza Aérea Argentina, generando un salto cuantitativo en las capacidades estratégicas que poseía la Institución en el segmento de la caza interceptora, pero también cualitativas en lo que refiere a nuevas técnicas de mantenimiento y una doctrina de operación diferente que posicionaron al país en la avanzada tecnológica del continente.",
+  "item_main_content": "Por años los nobles y robustos Mirage representaron un paradigma a seguir no sólo en cuanto a sus capacidades para la defensa aérea, para la localización, identificación, interceptación y neutralización de una o más amenazas, sino también respecto a la alta capacitación de sus pilotos, técnicos y especialistas, quienes se encargaron incluso de realizar en su momento el mantenimiento de flotas de estas aeronaves en otras Fuerzas Aéreas de Latinoamérica.",
+  "item_main_picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Belgian_Mirage_5BR%2C_RAF_Wildenrath%2C_Germany%2C_%22Tactical_Air_Meet_%2778%22%2C_15_May_1978.jpg/300px-Belgian_Mirage_5BR%2C_RAF_Wildenrath%2C_Germany%2C_%22Tactical_Air_Meet_%2778%22%2C_15_May_1978.jpg",
+  "item_gallery": [
+    {
+      "url": "https://1.bp.blogspot.com/-jkUJYISWLhc/Vrv9r9cTaWI/AAAAAAAAD_M/Vve7hnezU1U/s1600/Foto01.jpg",
+      "description": "Imagen 1"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/mirage_iii_ea.jpg",
+      "description": "Imagen 2"
+    },
+    {
+      "url": "https://www.argentina.gob.ar/sites/default/files/mirage-en-malvinas.jpg",
+      "description": "Imagen 3"
+    }
+  ],
+  "item_youtube": "https://www.youtube.com/watch?v=JDTHAPSZzwA",
+  "item_tags": "Avión, pucará, malvinas",
+  "item_external_links": [
+    {
+      "url": "",
+      "name": ""
+    },
+    {
+      "url": "",
+      "name": ""
+    },
+    {
+      "url": "",
+      "name": ""
+    }
+  ],
+  "item_lat": "0.012345",
+  "item_long": "0.012345",
+  "item_audio_link": ""
+}
+

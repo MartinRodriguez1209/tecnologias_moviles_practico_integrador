@@ -36,6 +36,7 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     private lateinit var youtubeUrl: String
     private lateinit var itemMuseo: ItemMuseo
     private lateinit var context: Context
+    private var qr: String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,13 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         val binding = ActivityVisorQrBinding.inflate(layoutInflater)
         setContentView(binding.root)
         context = this
+
+        if (intent.getStringExtra("qr") != null) {
+            qr = intent.getStringExtra("qr").toString()
+            itemMuseoWorker.setQrdId(qr!!)
+            Toast.makeText(this, qr, Toast.LENGTH_SHORT).show()
+        }
+
         getItemMuseo(binding)
         navMenu()
         init(binding)
@@ -51,13 +59,14 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     fun getItemMuseo(binding: ActivityVisorQrBinding) {
         itemMuseoWorker.getItemMuseum(object : ActionListenerCallback {
             override fun onActionSuccess(museoSucces: ItemMuseo) {
+                itemMuseo = museoSucces
                 Log.i("SUCCESS", museoSucces.toString())
                 binding.textViewToolbar.text = museoSucces.item_title
                 binding.textViewContenido.text =
                     museoSucces.item_intro + museoSucces.item_main_content
                 viewPager(museoSucces.item_gallery)
                 youtubeUrl = museoSucces.item_youtube
-                itemMuseo = museoSucces
+
             }
 
 
@@ -69,6 +78,7 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
     fun viewPager(urls: List<ItemGallery>) {
         val urlsArray: MutableList<String> = emptyList<String>().toMutableList()
+        urlsArray.add(itemMuseo.item_main_picture)
         for (element in urls) {
             urlsArray.add(element.url)
         }
