@@ -41,15 +41,26 @@ class LoginRegistrarseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         registrarse_button.setOnClickListener() {
-            if (binding.editTextMail.text.isEmpty() or !Utilities.mailValidation(binding.editTextMail.text.toString())) {
-                validation = false
+            if (binding.editTextUsuario.text.isEmpty() or binding.editTextApellido.text.isEmpty() or binding.editTextContrasenia.text.isEmpty() or
+                binding.editTextNombre.text.isEmpty() or binding.editTextMail.text.isEmpty()
+            ) {
                 Toast.makeText(
                     this.requireContext(),
-                    "El mail debe tener un formato valido",
+                    getString(R.string.fallo_registrarse_campos_vacios) ,
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
             }
+            if (!Utilities.mailValidation(binding.editTextMail.text.toString())) {
+                validation = false
+                Toast.makeText(
+                    this.requireContext(),
+                    getString(R.string.fallo_mail_registrarse),
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+
             if (validation) {
                 usuario = Usuario(
                     id = null,

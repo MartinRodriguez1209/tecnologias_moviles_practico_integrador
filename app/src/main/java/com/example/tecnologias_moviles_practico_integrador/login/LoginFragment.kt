@@ -63,7 +63,8 @@ class LoginFragment : Fragment() {
                     val preference = PreferenceUtil(context)
                     preference.setLogin()
                     preference.setUserLogin(binding.editTextUsuario.text.toString())
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {

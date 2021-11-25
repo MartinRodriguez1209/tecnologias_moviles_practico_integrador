@@ -1,9 +1,4 @@
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
-TODO sharedpreference
-TODO preferenceScreen ?
-
-
-
 1. La aplicación deberá mostrar una pantalla inicial, splash.
 
 2. La aplicación debe permitir el login y registro de usuario en forma local. (Base de
@@ -52,7 +47,7 @@ Pager, Recycler View, Glide o Picasso (Librería externa). (Extra)
 información, y otro si no puede conectarse a internet. (Dialogs) TODO mejorar esto
 
 13. La aplicación deberá tener una pantalla de Settings (Configuraciones), donde el
-usuario puede elegir sus preferencias de usuario. (Shared Preferences). TODO agregar alguna shared preference
+usuario puede elegir sus preferencias de usuario. (Shared Preferences).
 
 14. La aplicación deberá contener un menú de navegación que permita acceder a las
 distintas opciones (Inicio, Favoritos, Configuración, Editar Perfil, Cerrar Sesión)
@@ -70,33 +65,6 @@ ejecución. (Permissions).
 18. Requerimientos Extra: Se podrá ubicar en un mapa de google maps los lugares
 donde se encuentran los QR.
 
-
-
-    fun setActionListener(callback: ActionListenerCallback) {
-        listener = callback
-        // Realizar alguna tarea antes de invocar al callback.
-        // En este ejemplo solo espera 5 segundos.
-        TODO aca va lo de base de datos?
-
-        val handler = Handler()
-        handler.postDelayed(Runnable {
-
-            if (listener != null) {
-                callback.onActionSuccess("exito")
-            } else {
-                callback.onActionFailure(Throwable("Error"))
-            }
-
-        }, 5000)
-
-
-    }
-
-
-
-
-
-TODO,  algun shared preference para config
 TODO validaciones de los campos
 
 }

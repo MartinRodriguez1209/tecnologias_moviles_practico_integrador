@@ -20,5 +20,3 @@ class LoginActivity : AppCompatActivity() {
 
 
 }
-
-//TODO trabajar esto con fragments?
