@@ -5,7 +5,6 @@ import com.example.tecnologias_moviles_practico_integrador.data.ItemFavorito
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 
 
-
 @Dao
 interface UsuarioDao {
 
@@ -52,6 +51,8 @@ interface ItemFavoritoDao {
     @Query("DELETE FROM tabla_tema_favorito WHERE nombre_usuario = :nombredeusuario AND id = :id")
     suspend fun deleteFavorito(nombredeusuario: String, id: String)
 
+    @Query("SELECT * FROM tabla_tema_favorito WHERE nombre_usuario = :nombreUsuario AND id= :idItem")
+    suspend fun selectFavorito(idItem: String, nombreUsuario: String): ItemFavorito
 
 
 }

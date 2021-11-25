@@ -34,7 +34,7 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
     private var temaList: ItemMuseoTema = ItemMuseoTema(emptyList())
     private lateinit var drawer: DrawerLayout
     private val CAMERA_PERMISSION_CODE = 100
-    private val itemMuseoWorker: ItemMuseoRepository = ItemMuseoRepository(this)
+    private lateinit var itemMuseoWorker: ItemMuseoRepository
     private val PERMISSIONS: Array<String> = arrayOf(
         android.Manifest.permission.CAMERA
     )
@@ -44,8 +44,8 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         super.onCreate(savedInstanceState)
         val binding = ActivityTemasBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        itemMuseoWorker = ItemMuseoRepository(this)
         initTemas()
-
         navMenu()
         binding.imageViewQrBoton.setOnClickListener() {
             if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CAMERA)

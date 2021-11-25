@@ -1,13 +1,16 @@
 package com.example.tecnologias_moviles_practico_integrador.qr.visor
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager2.widget.ViewPager2
@@ -22,10 +25,7 @@ import com.example.tecnologias_moviles_practico_integrador.inicio.TemasFavoritos
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebaViewPagerAdapter2
 import com.google.android.material.navigation.NavigationView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,12 +35,14 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     private val itemMuseoWorker: ItemMuseoRepository = ItemMuseoRepository(this)
     private lateinit var youtubeUrl: String
     private lateinit var itemMuseo: ItemMuseo
+    private lateinit var context: Context
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityVisorQrBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        context = this
         getItemMuseo(binding)
         navMenu()
         init(binding)
@@ -142,6 +144,8 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
     }
 
     fun agregarFavorito() {
+
+
         val itemFavorito = ItemFavorito(
             idDatabase = null,
             itemMuseo.id,
@@ -150,22 +154,54 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             itemMuseo.room_name
         )
 
+
         GlobalScope.launch {
-            try {
-                itemMuseoWorker.insertItemFavorito(itemFavorito)
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        applicationContext,
-                        R.string.boton_favorito_toast,
-                        Toast.LENGTH_SHORT
-                    ).show()
+
+            if (!itemMuseoWorker.isItemFavorito(
+                    itemMuseo.id,
+                    Usuario.userInstance.nombre_usuario
+                )
+            ) {
+                try {
+                    itemMuseoWorker.insertItemFavorito(itemFavorito)
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            applicationContext,
+                            R.string.boton_favorito_toast,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } catch (e: Throwable) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Error",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-            } catch (e: Throwable) {
+            } else {
+                val dialog = AlertDialog.Builder(context)
+                    .setTitle("Este item ya esta en favoritos")
+                    .setMessage("¿Desea quitarlo de favoritos?")
+                    .setNegativeButton("No") { view, _ ->
+                        view.dismiss()
+                    }.setPositiveButton("Si") { view, _ ->
+                        GlobalScope.launch {
+                            itemMuseoWorker.deleteFavorito(
+                                Usuario.userInstance.nombre_usuario,
+                                itemMuseo.id
+                            )
+                        }
+                        view.dismiss()
+                    }
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(applicationContext, "Este item ya se encuentra en favoritos", Toast.LENGTH_SHORT).show()
+                    dialog.create()
+                    dialog.show()
                 }
             }
         }
 
     }
+
 }

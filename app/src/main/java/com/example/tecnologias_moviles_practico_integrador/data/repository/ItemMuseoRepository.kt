@@ -62,6 +62,17 @@ class ItemMuseoRepository(context: Context) {
         })
     }
 
+    suspend fun isItemFavorito(idItem: String, nombreUsuario: String): Boolean {
+        try {
+            if (favoritoDao?.selectFavorito(idItem, nombreUsuario) != null) {
+                return true
+            } else {
+                return false
+            }
+        } catch (e: Throwable) {
+            return false
+        }
+    }
 
     suspend fun insertItemFavorito(itemFavorito: ItemFavorito) {
         favoritoDao?.insert(itemFavorito)
