@@ -193,8 +193,8 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 }
             } else {
                 val dialog = AlertDialog.Builder(context)
-                    .setTitle("Este item ya esta en favoritos")
-                    .setMessage("¿Desea quitarlo de favoritos?")
+                    .setTitle(getString(R.string.alert_dialogo_favorito_titulo))
+                    .setMessage(getString(R.string.aler_dialog_favorito_mensaje))
                     .setNegativeButton("No") { view, _ ->
                         view.dismiss()
                     }.setPositiveButton("Si") { view, _ ->

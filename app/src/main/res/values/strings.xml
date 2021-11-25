@@ -55,6 +55,8 @@
     <string name="cambio_contrasenia_fallo">usuario incorrecto</string>
     <string name="fallo_mail_registrarse">El mail debe tener un formato valido</string>
     <string name="fallo_registrarse_campos_vacios">No se admiten campos vacios</string>
+    <string name="alert_dialogo_favorito_titulo">Este item ya esta en favoritos</string>
+    <string name="aler_dialog_favorito_mensaje">¿Desea quitarlo de favoritos?</string>
 
 
 </resources>
