@@ -96,9 +96,9 @@ donde se encuentran los QR.
 
 
 
-TODO,  algun shared preference para config, ejemplo del qr, dialogos(withContext(Dispatchers.Main) para las corrutinas)
+TODO,  algun shared preference para config
 TODO validaciones de los campos
-TODO mantener la sesion iniciada
+
 }
 
 database

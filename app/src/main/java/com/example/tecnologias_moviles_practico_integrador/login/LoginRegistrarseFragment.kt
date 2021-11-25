@@ -1,27 +1,21 @@
 package com.example.tecnologias_moviles_practico_integrador.login
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.viewbinding.ViewBinding
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.Util.Utilities
-import com.example.tecnologias_moviles_practico_integrador.dao.DataBase
+import com.example.tecnologias_moviles_practico_integrador.util.Utilities
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginRegistrarseBinding
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlin.properties.Delegates
 
 class LoginRegistrarseFragment : Fragment() {
 

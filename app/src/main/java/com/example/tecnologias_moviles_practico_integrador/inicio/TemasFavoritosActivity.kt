@@ -12,7 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
+import com.example.tecnologias_moviles_practico_integrador.util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
 import com.example.tecnologias_moviles_practico_integrador.data.ItemFavorito
 import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
@@ -21,7 +21,6 @@ import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityTemasFavoritosBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
-import com.example.tecnologias_moviles_practico_integrador.inicio.recycle_view.Tema
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 import com.example.tecnologias_moviles_practico_integrador.qr.visor.VisorQrActivity
 import com.google.android.material.navigation.NavigationView

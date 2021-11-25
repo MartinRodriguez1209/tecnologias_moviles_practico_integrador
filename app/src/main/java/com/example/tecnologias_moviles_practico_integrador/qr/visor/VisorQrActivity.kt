@@ -21,6 +21,7 @@ import com.example.tecnologias_moviles_practico_integrador.data.*
 import com.example.tecnologias_moviles_practico_integrador.data.repository.ItemMuseoRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.ActivityVisorQrBinding
 import com.example.tecnologias_moviles_practico_integrador.editar_informacion.EditarInformacionActivity
+import com.example.tecnologias_moviles_practico_integrador.inicio.TemasActivity
 import com.example.tecnologias_moviles_practico_integrador.inicio.TemasFavoritosActivity
 import com.example.tecnologias_moviles_practico_integrador.login.LoginActivity
 import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebaViewPagerAdapter2
@@ -211,7 +212,13 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 }
             }
         }
+    }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, TemasActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+        startActivity(intent)
     }
 
 }

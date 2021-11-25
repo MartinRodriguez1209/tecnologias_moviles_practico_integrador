@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.Util.Utilities
+import com.example.tecnologias_moviles_practico_integrador.util.Utilities
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentEditarContraseniaBinding

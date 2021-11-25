@@ -2,7 +2,6 @@ package com.example.tecnologias_moviles_practico_integrador.inicio
 
 import android.Manifest
 import android.content.Intent
-import android.content.pm.ConfigurationInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
+import com.example.tecnologias_moviles_practico_integrador.util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallbackList
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
 import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
@@ -66,6 +65,7 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         recyclerView.adapter = TemasAdapter(temaList, this)
 
     }
+
 
     fun navMenu() {
         setSupportActionBar(findViewById(R.id.toolbar))

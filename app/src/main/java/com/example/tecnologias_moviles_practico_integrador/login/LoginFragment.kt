@@ -12,7 +12,7 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
+import com.example.tecnologias_moviles_practico_integrador.util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginBinding
@@ -63,6 +63,7 @@ class LoginFragment : Fragment() {
                     val preference = PreferenceUtil(context)
                     preference.setLogin()
                     preference.setUserLogin(binding.editTextUsuario.text.toString())
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {

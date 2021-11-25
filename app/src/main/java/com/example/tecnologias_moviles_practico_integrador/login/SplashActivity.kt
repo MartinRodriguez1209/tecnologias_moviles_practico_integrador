@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.provider.Settings
 import com.example.tecnologias_moviles_practico_integrador.R
-import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
+import com.example.tecnologias_moviles_practico_integrador.util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.inicio.TemasActivity
-import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebaViewPagerActivity
-import com.example.tecnologias_moviles_practico_integrador.pruebas.PruebasDataBase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 

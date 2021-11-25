@@ -1,4 +1,4 @@
-package com.example.tecnologias_moviles_practico_integrador.Util
+package com.example.tecnologias_moviles_practico_integrador.util
 
 import android.content.Context
 import android.util.Patterns
@@ -15,6 +15,8 @@ import com.example.tecnologias_moviles_practico_integrador.data.Usuario
         }
 
         fun mailValidation(mail: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(mail).matches()
+
+
 
     }
 }
