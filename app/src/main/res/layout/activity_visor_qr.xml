@@ -67,10 +67,10 @@
                 <TextView
                     android:id="@+id/textView_contenido"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/default_hiehgt"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="@dimen/visor_contenido_text_padding"
-                    android:text="@string/visor_texto_ejemplo"
+                    android:text=""
                     android:textSize="@dimen/visor_contenido_text_size" />
 
             </ScrollView>

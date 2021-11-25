@@ -17,7 +17,6 @@
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_login_registrarse.xml" value="0.25" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_navigation_menu.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_callbacks.xml" value="0.335" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_qr.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_qr2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/layout/activity_prueba_view_pager.xml" value="0.25" />
@@ -53,8 +52,10 @@
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/login/drawable/youtube_button_background.xml" value="0.31875" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/login/mipmap-anydpi-v26/youtube_button.xml" value="0.178125" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/menu/main_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/menu/main_menu_fav.xml" value="2.5142857142857142" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/tecnologias_moviles_practico_integrador/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
         <entry key="..\:/Users/Martin/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/activity_list_item.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_callbacks.xml" value="0.335" />
       </map>
     </option>
   </component>

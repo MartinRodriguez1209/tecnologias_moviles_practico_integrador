@@ -50,7 +50,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:clipToPadding="false"
-        app:menu="@menu/main_menu" />
+        app:menu="@menu/main_menu_fav" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

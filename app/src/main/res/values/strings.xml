@@ -52,6 +52,7 @@
     <string name="video_fallo_mensaje">Ese item no tiene video</string>
     <string name="contrasenia_cambio_error">Las contraseñas deben coincidir</string>
     <string name="fallo_login">Usuario o contraseña incorrecta</string>
+    <string name="cambio_contrasenia_fallo">usuario incorrecto</string>
 
 
 </resources>

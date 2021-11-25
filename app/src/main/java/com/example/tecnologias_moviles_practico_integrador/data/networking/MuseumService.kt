@@ -12,7 +12,7 @@ interface MuseumService {
     @GET("v1/407de6c2-afa3-496d-b712-3b0f4ade0e14")
     fun getMuseumItem(): Call<ItemMuseo>
 
-    @GET("/v1/290a0013-549f-4a0a-8739-f6c7ec4ff025")
+    @GET("/v1/e86a5e37-7ad6-49a2-8910-1400b77eca89")
     fun getMuseumTemasList(): Call<ItemMuseoTema>
 
     @GET("https://mocki.io/v1/407de6c2-afa3-496d-b712-3b0f4ade0e14")

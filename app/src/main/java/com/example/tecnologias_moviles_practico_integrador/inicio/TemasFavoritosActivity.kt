@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
 import com.example.tecnologias_moviles_practico_integrador.data.ItemFavorito
 import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
@@ -41,7 +42,6 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         val binding = ActivityTemasFavoritosBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initTemas()
-
         navMenu()
 
 
@@ -69,25 +69,28 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         }
     }
 
-    fun recyclerView(){
+    fun recyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_temas)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = TemasAdapter(temaList, this)
     }
 
+
     private fun initTemas() {
-
-
         GlobalScope.launch {
             temaListFavorito = itemMuseoWorker.getFavoritos(Usuario.userInstance.nombre_usuario)!!
             for (i in 0 until temaListFavorito.size) {
-             temaListAux.add(ItemMuseoTemaGallery(temaListFavorito[i].id,temaListFavorito[i].titulo,temaListFavorito[i].roomName))
+                temaListAux.add(
+                    ItemMuseoTemaGallery(
+                        temaListFavorito[i].id,
+                        temaListFavorito[i].titulo,
+                        temaListFavorito[i].roomName
+                    )
+                )
             }
-            temaList.item_gallery= temaListAux
+            temaList.item_gallery = temaListAux
             recyclerView()
-
         }
-
     }
 
     override fun onItemClick(position: Int) {
@@ -101,6 +104,7 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         startActivity(intent)
     }
 
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == R.id.nav_cuenta) {
@@ -109,9 +113,8 @@ class TemasFavoritosActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         } else if (id == R.id.nav_exit) {
             val intent = Intent(this, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK) //limpia el stack del boton back para que la proxima vez que se use se cierra la app
-            startActivity(intent)
-        } else if (id == R.id.nav_favoritos) {
-            val intent = Intent(this, TemasFavoritosActivity::class.java)
+            val preference = PreferenceUtil(this)
+            preference.setLogOut()
             startActivity(intent)
         } else if (id == R.id.nav_contacto_devs) {
             val email = Intent(Intent.ACTION_SENDTO)

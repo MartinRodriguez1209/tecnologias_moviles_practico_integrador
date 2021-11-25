@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.callbacks.ActionListenerCallbackList
 import com.example.tecnologias_moviles_practico_integrador.configuraciones.ConfiguracionesActivity
 import com.example.tecnologias_moviles_practico_integrador.data.ItemMuseoTema
@@ -126,6 +127,8 @@ class TemasActivity : AppCompatActivity(), RecyclerViewOnClickListener,
         } else if (id == R.id.nav_exit) {
             val intent = Intent(this, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK) //limpia el stack del boton back para que la proxima vez que se use se cierra la app
+            val preference = PreferenceUtil(this)
+            preference.setLogOut()
             startActivity(intent)
         } else if (id == R.id.nav_favoritos) {
             val intent = Intent(this, TemasFavoritosActivity::class.java)

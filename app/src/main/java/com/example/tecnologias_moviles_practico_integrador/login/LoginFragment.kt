@@ -12,6 +12,7 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.tecnologias_moviles_practico_integrador.R
+import com.example.tecnologias_moviles_practico_integrador.Util.PreferenceUtil
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 import com.example.tecnologias_moviles_practico_integrador.data.repository.UsuarioRepository
 import com.example.tecnologias_moviles_practico_integrador.databinding.FragmentLoginBinding
@@ -59,6 +60,9 @@ class LoginFragment : Fragment() {
                     usuario?.let { it1 -> Usuario.instanceUser(it1) }
                     val intent = Intent(activity, TemasActivity::class.java)
                     intent.putExtra("nombre_usuario", usuario!!.nombre)
+                    val preference = PreferenceUtil(context)
+                    preference.setLogin()
+                    preference.setUserLogin(binding.editTextUsuario.text.toString())
                     startActivity(intent)
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {

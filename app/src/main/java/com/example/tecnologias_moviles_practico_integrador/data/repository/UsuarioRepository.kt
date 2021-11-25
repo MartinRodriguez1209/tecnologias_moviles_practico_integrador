@@ -31,6 +31,10 @@ class UsuarioRepository(context: Context) {
         usuarioDao?.insert(usuario)
     }
 
+    suspend fun getUsuario(nombreUsuario: String): Usuario? {
+       return usuarioDao?.selectUsuario(nombreUsuario)
+    }
+
     suspend fun updateNombreUsuario(nuevoNombreUsuario: String, nombreUsuarioActual: String) {
         usuarioDao?.updateNombreUsuario(nuevoNombreUsuario, nombreUsuarioActual)
     }
@@ -44,7 +48,7 @@ class UsuarioRepository(context: Context) {
     }
 
     suspend fun updateContrasenia(nuevaContrasenia: String, nombreUsuarioActual: String) {
-        usuarioDao?.updateContrasenia(nuevaContrasenia,nombreUsuarioActual)
+        usuarioDao?.updateContrasenia(nuevaContrasenia, nombreUsuarioActual)
     }
 
 }

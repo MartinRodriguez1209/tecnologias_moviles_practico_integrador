@@ -5,7 +5,7 @@ import android.util.Patterns
 import com.example.tecnologias_moviles_practico_integrador.dao.DataBase
 import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 
-public class Utilities() {
+ class Utilities() {
 
     companion object {
         suspend fun usuarioRefresh(nombreUsuario: String, context: Context) {
