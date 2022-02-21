@@ -1,3 +1,29 @@
+FINAL
+
+mejorar las corutinas
+algo de LiveData??
+estudiar todo de nuevo
+preparar varios ejemplos de qr y lista de temas en mockio
+implementar mas fragments
+
+
+revisar Room
+hacer todo mas lindo
+
+notificaciones que se puedan configurar
+alguna setting de verdad
+
+manejar bien todos los posibles errores(base de datos, datos incorrectos, internet)
+EXCEPCIONES!
+terminar las validaciones de entradas de usuario
+
+
+
+
+
+
+
+
 TODO usar el navigation menu en todas las activities sin repetir codigo? baseActivity con el navigation menu y que las demas extiendan?
 1. La aplicación deberá mostrar una pantalla inicial, splash.
 
@@ -47,7 +73,7 @@ Pager, Recycler View, Glide o Picasso (Librería externa). (Extra)
 información, y otro si no puede conectarse a internet. (Dialogs) TODO mejorar esto
 
 13. La aplicación deberá tener una pantalla de Settings (Configuraciones), donde el
-usuario puede elegir sus preferencias de usuario. (Shared Preferences).
+usuario puede elegir sus preferencias de usuario. (Shared Preferences). TODO algo de esto
 
 14. La aplicación deberá contener un menú de navegación que permita acceder a las
 distintas opciones (Inicio, Favoritos, Configuración, Editar Perfil, Cerrar Sesión)
@@ -57,7 +83,7 @@ distintas opciones (Inicio, Favoritos, Configuración, Editar Perfil, Cerrar Ses
 seleccione. (Fragment - Persistencia).
 
 16. Requerimiento Extra: Notificaciones: La aplicación deberá permitir enviar una
-notificación diaria a la misma hora para invitar a leer (Notifications).
+notificación diaria a la misma hora para invitar a leer (Notifications). TODO una notificacion simple
 
 17. El permiso de cámara al momento de escanear un QR se solicitará en tiempo de
 ejecución. (Permissions).

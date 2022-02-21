@@ -55,6 +55,11 @@
             android:name=".login.LoginActivity"
             android:noHistory="true"
             android:exported="true" />
+
+        <receiver android:name="com.example.tecnologias_moviles_practico_integrador.util.broadcast.AlarmReceiver" android:enabled="true"/>
+
+
+
     </application>
 
 </manifest>

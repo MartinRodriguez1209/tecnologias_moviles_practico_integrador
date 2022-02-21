@@ -16,7 +16,12 @@ import com.example.tecnologias_moviles_practico_integrador.data.Usuario
 
         fun mailValidation(mail: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(mail).matches()
 
+        fun channelID():String = "1001"
 
 
     }
-}
+
+
+
+
+ }

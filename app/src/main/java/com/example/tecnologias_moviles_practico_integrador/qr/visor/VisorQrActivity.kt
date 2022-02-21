@@ -49,7 +49,6 @@ class VisorQrActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         if (intent.getStringExtra("qr") != null) {
             qr = intent.getStringExtra("qr").toString()
             itemMuseoWorker.setQrdId(qr!!)
-            Toast.makeText(this, qr, Toast.LENGTH_SHORT).show()
         }
 
         getItemMuseo(binding)
